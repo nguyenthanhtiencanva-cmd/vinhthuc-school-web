@@ -20,30 +20,30 @@ export default function QuickCards() {
   };
 
   return (
-    <section className="relative z-20 -mt-14 sm:-mt-16 md:-mt-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+    <section className="relative z-20 -mt-10 sm:-mt-16 md:-mt-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {QUICK_CARDS.map((card) => (
           <Link
             key={card.id}
             href={card.href}
-            className={`${card.bgColor} rounded-2xl p-5 sm:p-6 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between border border-white/60 group`}
+            className={`${card.bgColor} rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between border border-white/70 group`}
           >
-            <div className="flex items-start justify-between gap-3">
-              <div className="p-3 bg-white/80 rounded-xl shadow-xs">
+            <div className="flex items-start justify-between gap-2">
+              <div className="p-2 sm:p-3 bg-white/90 rounded-lg sm:rounded-xl shadow-xs">
                 {getIcon(card.iconName)}
               </div>
               <div
-                className={`w-8 h-8 rounded-full flex items-center justify-center ${card.arrowColor} group-hover:scale-110 transition-transform shadow-xs`}
+                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full flex items-center justify-center ${card.arrowColor} group-hover:scale-110 transition-transform shadow-xs shrink-0`}
               >
-                <ArrowRight className="w-4 h-4" />
+                <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
               </div>
             </div>
 
-            <div className="mt-4">
-              <h2 className="text-base sm:text-lg font-bold text-[#062D62] tracking-tight group-hover:text-[#0867C8] transition-colors">
+            <div className="mt-3 sm:mt-4">
+              <h2 className="text-xs sm:text-base md:text-lg font-extrabold text-[#062D62] tracking-tight group-hover:text-[#0867C8] transition-colors leading-tight">
                 {card.title}
               </h2>
-              <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed line-clamp-2">
+              <p className="text-[11px] sm:text-xs md:text-sm text-slate-600 mt-1 leading-relaxed line-clamp-2 hidden xs:block sm:block">
                 {card.description}
               </p>
             </div>
