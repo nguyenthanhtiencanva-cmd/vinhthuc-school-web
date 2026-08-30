@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0867C8" />
+      <stop offset="60%" stop-color="#38BDF8" />
+      <stop offset="100%" stop-color="#BAE6FD" />
+    </linearGradient>
+    <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7" />
+      <stop offset="100%" stop-color="#0369A1" />
+    </linearGradient>
+    <linearGradient id="island" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#15803D" />
+      <stop offset="100%" stop-color="#166534" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="500" fill="url(#sky)" />
+  <circle cx="680" cy="100" r="45" fill="#FDE047" opacity="0.9" />
+  <!-- Mountains/Islands -->
+  <path d="M-50,340 Q150,220 350,330 Q550,230 850,340 L850,500 L-50,500 Z" fill="url(#island)" opacity="0.7"/>
+  <!-- Sea -->
+  <rect y="350" width="800" height="150" fill="url(#sea)" />
+  <!-- Lighthouse -->
+  <polygon points="620,180 635,180 640,360 615,360" fill="#F8FAFC" stroke="#062D62" stroke-width="2"/>
+  <rect x="618" y="165" width="19" height="15" fill="#EF4444" />
+  <polygon points="627,150 615,165 640,165" fill="#062D62" />
+  <circle cx="627" cy="172" r="4" fill="#FDE047" />
+  <!-- School Building Silhouette -->
+  <rect x="180" y="270" width="300" height="90" fill="#FFFFFF" rx="4" opacity="0.95"/>
+  <polygon points="170,270 330,210 490,270" fill="#DC2626"/>
+  <rect x="210" y="290" width="40" height="40" fill="#0284C7" rx="2"/>
+  <rect x="270" y="290" width="40" height="40" fill="#0284C7" rx="2"/>
+  <rect x="330" y="290" width="40" height="40" fill="#0284C7" rx="2"/>
+  <rect x="390" y="290" width="40" height="40" fill="#0284C7" rx="2"/>
+  <rect x="310" y="325" width="40" height="35" fill="#B45309"/>
+  <!-- Waves -->
+  <path d="M0,370 Q100,360 200,370 T400,370 T600,370 T800,370 L800,500 L0,500 Z" fill="#0284C7" opacity="0.6"/>
+  <path d="M0,400 Q120,385 240,400 T480,400 T720,400 T800,400 L800,500 L0,500 Z" fill="#0369A1" opacity="0.8"/>
+  <text x="400" y="460" font-family="sans-serif" font-size="20" font-weight="bold" fill="#FFFFFF" text-anchor="middle" letter-spacing="2">TRƯỜNG TH &amp; THCS VĨNH THỰC</text>
+</svg>

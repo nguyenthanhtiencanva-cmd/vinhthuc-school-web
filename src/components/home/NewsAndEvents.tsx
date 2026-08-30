@@ -1,0 +1,164 @@
+import React from "react";
+import Image from "next/image";
+import Link from "next/link";
+import { Calendar, Clock, MapPin, ArrowRight, ChevronRight } from "lucide-react";
+import { FEATURED_NEWS, RECENT_NEWS, UPCOMING_EVENTS } from "@/data/mock-data";
+
+export default function NewsAndEvents() {
+  return (
+    <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10">
+        {/* Left 8 columns: Tin tức nổi bật */}
+        <div className="lg:col-span-8 space-y-6">
+          <div className="flex items-center justify-between border-b-2 border-slate-100 pb-3">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2">
+              <span className="w-2.5 h-6 bg-[#0867C8] rounded-full inline-block"></span>
+              <span>TIN TỨC NỔI BẬT</span>
+            </h2>
+            <Link
+              href="#tin-tuc"
+              className="text-xs sm:text-sm font-semibold text-[#0867C8] hover:text-[#062D62] flex items-center gap-1 transition-colors"
+            >
+              <span>Xem tất cả</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {/* Big Featured News (7 cols) */}
+            <div className="md:col-span-7 flex flex-col bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow group">
+              <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+                <Image
+                  src={FEATURED_NEWS.image}
+                  alt={FEATURED_NEWS.title}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 450px"
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute top-3 left-3 bg-[#0867C8] text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                  {FEATURED_NEWS.category}
+                </div>
+              </div>
+
+              <div className="p-5 flex-1 flex flex-col justify-between">
+                <div className="space-y-2">
+                  <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium">
+                    <Calendar className="w-3.5 h-3.5 text-[#0867C8]" />
+                    <span>{FEATURED_NEWS.date}</span>
+                  </div>
+                  <h3 className="text-base sm:text-lg font-bold text-[#062D62] group-hover:text-[#0867C8] transition-colors leading-snug line-clamp-2">
+                    <Link href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf" target="_blank">
+                      {FEATURED_NEWS.title}
+                    </Link>
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
+                    {FEATURED_NEWS.summary}
+                  </p>
+                </div>
+
+                <div className="pt-4 mt-2 border-t border-slate-100">
+                  <Link
+                    href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
+                    target="_blank"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0867C8] hover:text-[#062D62] group/btn"
+                  >
+                    <span>Xem quyết định</span>
+                    <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+
+            {/* List 4 Smaller News (5 cols) */}
+            <div className="md:col-span-5 flex flex-col space-y-3.5">
+              {RECENT_NEWS.map((item) => (
+                <div
+                  key={item.id}
+                  className="flex gap-3 p-2.5 rounded-xl bg-white hover:bg-blue-50/50 border border-slate-100 hover:border-blue-100 transition-all group"
+                >
+                  <div className="relative w-20 h-20 rounded-lg overflow-hidden shrink-0 bg-slate-100">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      fill
+                      sizes="80px"
+                      className="object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+                    <div>
+                      <div className="flex items-center justify-between gap-1 mb-1">
+                        <span className="text-[10px] font-bold text-[#0867C8] bg-blue-50 px-1.5 py-0.5 rounded truncate max-w-[120px]">
+                          {item.category}
+                        </span>
+                        <span className="text-[10px] text-slate-400 font-medium shrink-0">
+                          {item.date}
+                        </span>
+                      </div>
+                      <h4 className="text-xs font-bold text-[#062D62] group-hover:text-[#0867C8] transition-colors leading-snug line-clamp-2">
+                        <Link href={`#tin-tuc/${item.slug}`}>{item.title}</Link>
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Right 4 columns: Sự kiện sắp diễn ra */}
+        <div className="lg:col-span-4 space-y-6">
+          <div className="flex items-center justify-between border-b-2 border-slate-100 pb-3">
+            <h2 className="text-xl sm:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2">
+              <span className="w-2.5 h-6 bg-[#E58A00] rounded-full inline-block"></span>
+              <span>SỰ KIỆN SẮP DIỄN RA</span>
+            </h2>
+            <Link
+              href="#su-kien"
+              className="text-xs sm:text-sm font-semibold text-[#0867C8] hover:text-[#062D62] flex items-center gap-1 transition-colors"
+            >
+              <span>Xem tất cả</span>
+              <ChevronRight className="w-4 h-4" />
+            </Link>
+          </div>
+
+          <div className="space-y-3.5">
+            {UPCOMING_EVENTS.map((evt) => (
+              <div
+                key={evt.id}
+                className="flex items-stretch gap-3.5 p-3.5 rounded-2xl bg-white border border-slate-100 shadow-xs hover:shadow-md hover:border-amber-100 transition-all group"
+              >
+                {/* Date badge */}
+                <div className="w-16 rounded-xl bg-gradient-to-b from-[#EBF3FC] to-[#D9EAFB] border border-blue-200/60 flex flex-col items-center justify-center p-2 text-center shrink-0">
+                  <span className="text-xl font-extrabold text-[#062D62] leading-none">
+                    {evt.day}
+                  </span>
+                  <span className="text-[10px] font-bold text-[#0867C8] uppercase mt-1 leading-none">
+                    {evt.month}
+                  </span>
+                </div>
+
+                {/* Event info */}
+                <div className="flex-1 min-w-0 flex flex-col justify-center space-y-1">
+                  <h3 className="text-xs sm:text-sm font-bold text-[#062D62] group-hover:text-[#0867C8] transition-colors leading-snug line-clamp-2">
+                    <Link href={`#su-kien/${evt.slug}`}>{evt.title}</Link>
+                  </h3>
+                  <div className="flex items-center gap-2 text-[11px] text-slate-500">
+                    <div className="flex items-center gap-1">
+                      <Clock className="w-3 h-3 text-amber-500" />
+                      <span>{evt.time}</span>
+                    </div>
+                  </div>
+                  <div className="flex items-center gap-1 text-[11px] text-slate-500 truncate">
+                    <MapPin className="w-3 h-3 text-red-400 shrink-0" />
+                    <span className="truncate">{evt.location}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}

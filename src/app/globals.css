@@ -1,0 +1,25 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --primary-navy: #062D62;
+    --primary-blue: #0867C8;
+    --accent-sky: #15A9E8;
+    --accent-gold: #F59E0B;
+    --accent-gold-dark: #D97706;
+    --bg-light: #F8FAFC;
+    --text-main: #0F172A;
+    --text-muted: #475569;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* Custom wave & background patterns */
+.wave-divider {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1440 120' fill='%23ffffff'%3E%3Cpath d='M0,32L60,42.7C120,53,240,75,360,74.7C480,75,600,53,720,48C840,43,960,53,1080,58.7C1200,64,1320,64,1380,64L1440,64L1440,120L1380,120C1320,120,1200,120,1080,120C960,120,840,120,720,120C600,120,480,120,360,120C240,120,120,120,60,120L0,120Z'%3E%3C/path%3E%3C/svg%3E");
+  background-size: cover;
+  background-position: center bottom;
+}

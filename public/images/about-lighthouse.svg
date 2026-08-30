@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 650" width="100%" height="100%">
+  <defs>
+    <linearGradient id="aboutSky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0284C7"/>
+      <stop offset="60%" stop-color="#7DD3FC"/>
+      <stop offset="100%" stop-color="#F0F9FF"/>
+    </linearGradient>
+    <linearGradient id="lhGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="50%" stop-color="#E2E8F0"/>
+      <stop offset="100%" stop-color="#94A3B8"/>
+    </linearGradient>
+  </defs>
+  <rect width="500" height="650" fill="url(#aboutSky)" rx="16"/>
+  <!-- Sun and rays -->
+  <circle cx="250" cy="120" r="40" fill="#FDE047" opacity="0.9"/>
+  <!-- Seagulls -->
+  <path d="M80,80 Q95,65 110,80 Q125,65 140,80" fill="none" stroke="#0369A1" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M340,90 Q352,78 364,90 Q376,78 388,90" fill="none" stroke="#0369A1" stroke-width="2" stroke-linecap="round"/>
+  <!-- Distant cliffs -->
+  <path d="M0,450 Q120,380 250,440 T500,430 L500,650 L0,650 Z" fill="#0D9488" opacity="0.4"/>
+  <!-- Rocky shore -->
+  <path d="M0,520 Q160,480 320,530 T500,510 L500,650 L0,650 Z" fill="#047857" opacity="0.7"/>
+  <!-- Sea waves -->
+  <path d="M0,550 Q100,535 200,550 T400,550 T500,550 L500,650 L0,650 Z" fill="#0284C7"/>
+  <path d="M0,590 Q125,575 250,590 T500,590 L500,650 L0,650 Z" fill="#0369A1"/>
+  <!-- Lighthouse structure -->
+  <polygon points="230,220 270,220 285,500 215,500" fill="url(#lhGrad)" stroke="#0F172A" stroke-width="2"/>
+  <!-- Red stripes -->
+  <polygon points="232,270 268,270 272,320 228,320" fill="#EF4444"/>
+  <polygon points="224,370 276,370 280,420 220,420" fill="#EF4444"/>
+  <!-- Lantern room -->
+  <rect x="235" y="195" width="30" height="25" fill="#0F172A" rx="2"/>
+  <rect x="240" y="200" width="20" height="15" fill="#FEF08A"/>
+  <!-- Light dome and beacon beam -->
+  <polygon points="250,175 230,195 270,195" fill="#0F172A"/>
+  <polygon points="250,205 0,140 0,270" fill="#FEF08A" opacity="0.35"/>
+  <polygon points="250,205 500,140 500,270" fill="#FEF08A" opacity="0.35"/>
+  <text x="250" y="625" fill="#FFFFFF" font-family="sans-serif" font-size="16" font-weight="bold" text-anchor="middle" letter-spacing="1">HẢI ĐĂNG VĨNH THỰC</text>
+</svg>
