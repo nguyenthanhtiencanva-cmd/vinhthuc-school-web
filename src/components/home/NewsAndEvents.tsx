@@ -6,10 +6,10 @@ import { FEATURED_NEWS, RECENT_NEWS, UPCOMING_EVENTS } from "@/data/mock-data";
 
 export default function NewsAndEvents() {
   return (
-    <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+    <section id="tin-tuc" className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10 py-8 sm:py-12 md:py-16 xl:py-20">
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10">
         {/* Left 8 columns: Tin tức nổi bật */}
-        <div className="lg:col-span-8 space-y-4 sm:space-y-6">
+        <div className="lg:col-span-8 xl:col-span-9 space-y-4 sm:space-y-6">
           <div className="flex items-center justify-between border-b-2 border-slate-100 pb-2.5 sm:pb-3">
             <h2 className="text-lg sm:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2">
               <span className="w-2 sm:w-2.5 h-5 sm:h-6 bg-[#0867C8] rounded-full inline-block"></span>
@@ -107,9 +107,9 @@ export default function NewsAndEvents() {
         </div>
 
         {/* Right 4 columns: Sự kiện sắp diễn ra */}
-        <div className="lg:col-span-4 space-y-4 sm:space-y-6">
+        <div className="lg:col-span-4 xl:col-span-3 space-y-4 sm:space-y-6">
           <div className="flex items-center justify-between border-b-2 border-slate-100 pb-2.5 sm:pb-3">
-            <h2 className="text-lg sm:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2">
+            <h2 className="text-lg sm:text-xl xl:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2 whitespace-nowrap">
               <span className="w-2 sm:w-2.5 h-5 sm:h-6 bg-[#E58A00] rounded-full inline-block"></span>
               <span>SỰ KIỆN SẮP DIỄN RA</span>
             </h2>
@@ -117,7 +117,7 @@ export default function NewsAndEvents() {
               href="#su-kien"
               className="text-xs sm:text-sm font-semibold text-[#0867C8] hover:text-[#062D62] flex items-center gap-1 transition-colors"
             >
-              <span>Xem tất cả</span>
+              <span className="hidden 2xl:inline">Xem tất cả</span>
               <ChevronRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </Link>
           </div>

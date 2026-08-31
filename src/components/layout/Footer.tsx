@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <footer id="lien-he" className="bg-[#062D62] text-white pt-10 sm:pt-14 pb-8 border-t-4 border-[#0867C8]">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 pb-8 sm:pb-12 border-b border-blue-900/60">
           {/* Col 1: Brand & Logo (3 cols) */}
           <div className="sm:col-span-2 lg:col-span-3 space-y-3 sm:space-y-4">

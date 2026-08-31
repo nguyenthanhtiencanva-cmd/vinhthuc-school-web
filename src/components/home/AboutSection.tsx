@@ -22,11 +22,11 @@ export default function AboutSection() {
 
   return (
     <section id="gioi-thieu" className="bg-[#F8FAFC] py-10 sm:py-14 md:py-20 border-y border-slate-200/60 relative overflow-hidden">
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Column: Lighthouse Image */}
           <div className="lg:col-span-5 flex justify-center">
-            <div className="relative w-full max-w-[340px] sm:max-w-md aspect-[4/3] sm:aspect-[4/5] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 sm:border-4 border-white">
+            <div className="relative w-full max-w-[340px] sm:max-w-md lg:max-w-[460px] aspect-[4/3] sm:aspect-[4/5] lg:aspect-[4/3] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border-2 sm:border-4 border-white">
               <Image
                 src="/images/hai-dang-vinh-thuc.jpg"
                 alt="Hải đăng Vĩnh Thực"

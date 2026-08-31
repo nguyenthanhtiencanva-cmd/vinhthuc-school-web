@@ -5,7 +5,6 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   Phone,
-  Mail,
   GraduationCap,
   Search,
   Menu,
@@ -102,7 +101,7 @@ export default function Header() {
     <header className="w-full sticky top-0 z-50 bg-white shadow-md">
       {/* Top Utility Bar */}
       <div className="bg-[#062D62] text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-blue-900/40">
-        <div className="max-w-7xl mx-auto flex justify-between items-center gap-2">
+        <div className="max-w-[1440px] mx-auto flex justify-between items-center gap-2">
           <div className="flex items-center gap-1.5 text-slate-200 font-medium tracking-wide truncate">
             <span className="text-amber-400 font-semibold text-xs">★</span>
             <span className="truncate">Soi đường tri thức – Vững bước tương lai</span>
@@ -132,10 +131,10 @@ export default function Header() {
       </div>
 
       {/* Main Header / Navigation */}
-      <div className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 sm:h-20">
+      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
+        <div className="flex items-center justify-between h-16 sm:h-20 xl:h-[84px] gap-4">
           {/* Logo & School Name */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group min-w-0">
+          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 xl:w-[300px] 2xl:w-[340px] shrink-0">
             <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#062D62] bg-white p-0.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
               <Image
                 src="/brand/logo.jpeg"
@@ -160,7 +159,7 @@ export default function Header() {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden xl:flex items-center space-x-1">
+          <nav className="hidden xl:flex flex-1 items-center justify-center gap-0.5 2xl:gap-1">
             {NAV_ITEMS.map((item) => {
               const isHome = item.name === "TRANG CHỦ";
               const hasChildren = item.children && item.children.length > 0;
@@ -174,7 +173,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 px-3 py-2 rounded-md text-xs font-bold transition-all ${
+                    className={`flex items-center gap-1 px-2 2xl:px-3 py-2.5 rounded-lg text-[11px] 2xl:text-xs font-bold whitespace-nowrap transition-all ${
                       isHome
                         ? "text-[#0867C8] bg-blue-50/80 font-extrabold"
                         : "text-[#062D62] hover:text-[#0867C8] hover:bg-slate-50"
@@ -212,7 +211,7 @@ export default function Header() {
           </nav>
 
           {/* Search & Mobile Actions */}
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 xl:w-12 xl:justify-end shrink-0">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
               className="p-2.5 rounded-full bg-[#0867C8] text-white hover:bg-[#062D62] transition-colors shadow-sm focus:outline-none"

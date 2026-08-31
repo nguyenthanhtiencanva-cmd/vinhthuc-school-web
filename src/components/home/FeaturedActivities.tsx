@@ -25,7 +25,7 @@ export default function FeaturedActivities() {
   );
 
   return (
-    <section className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+    <section className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10 py-8 sm:py-12 md:py-16 xl:py-20">
       {/* Section Header */}
       <div className="flex items-center justify-between border-b-2 border-slate-100 pb-3 sm:pb-4 mb-5 sm:mb-8">
         <h2 className="text-lg sm:text-2xl font-extrabold text-[#062D62] tracking-tight uppercase flex items-center gap-2">

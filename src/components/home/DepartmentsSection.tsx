@@ -19,7 +19,7 @@ export default function DepartmentsSection() {
   };
 
   return (
-    <section id="to-chuyen-mon" className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-8 sm:py-12 md:py-16">
+    <section id="to-chuyen-mon" className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10 py-8 sm:py-12 md:py-16 xl:py-20">
       {/* Section Header */}
       <div className="flex flex-col sm:flex-row sm:items-end justify-between border-b-2 border-slate-100 pb-3 sm:pb-4 mb-5 sm:mb-8 gap-2">
         <div>
@@ -42,7 +42,7 @@ export default function DepartmentsSection() {
           <div
             key={dept.id}
             id={dept.id}
-            className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
+            className="bg-white rounded-xl sm:rounded-2xl p-4 sm:p-6 xl:p-7 min-h-[280px] border border-slate-200/80 shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between group"
           >
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-center justify-between">

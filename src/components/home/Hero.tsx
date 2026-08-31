@@ -5,7 +5,7 @@ import { ArrowRight, Compass, Newspaper, Sparkles, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative bg-gradient-to-b from-[#062D62] via-[#084C94] to-[#0A60B4] text-white pt-6 pb-20 sm:pt-10 sm:pb-28 md:pt-14 md:pb-36 overflow-hidden">
+    <section className="relative bg-gradient-to-b from-[#062D62] via-[#084C94] to-[#0A60B4] text-white pt-6 pb-20 sm:pt-10 sm:pb-28 md:pt-14 md:pb-36 lg:pt-12 lg:pb-32 xl:pt-14 overflow-hidden">
       {/* Background illustration & wave overlay */}
       <div className="absolute inset-0 opacity-15 mix-blend-screen pointer-events-none">
         <Image
@@ -17,10 +17,10 @@ export default function Hero() {
         />
       </div>
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-10 items-center">
+      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column: Hero Content (7 cols) */}
-          <div className="lg:col-span-7 space-y-4 sm:space-y-5 text-center lg:text-left z-10">
+          <div className="lg:col-span-7 xl:col-span-7 space-y-4 sm:space-y-5 xl:space-y-6 text-center lg:text-left z-10">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 py-1 sm:px-3.5 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-[11px] sm:text-xs font-bold tracking-wider text-sky-200 uppercase">
               <MapPin className="w-3.5 h-3.5 text-amber-400 shrink-0" />
               <span>Đảo Tiền Tiêu Vĩnh Thực</span>
@@ -28,18 +28,18 @@ export default function Hero() {
               <span>TP. Quảng Ninh</span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[44px] font-extrabold tracking-tight leading-tight uppercase text-white drop-shadow-md">
+            <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-[46px] xl:text-[52px] 2xl:text-[56px] font-extrabold tracking-tight leading-[1.12] uppercase text-white drop-shadow-md max-w-4xl">
               TRƯỜNG TH &amp; THCS VĨNH THỰC
             </h1>
 
             <div className="flex items-center justify-center lg:justify-start gap-2">
               <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-amber-400 shrink-0" />
-              <p className="text-lg sm:text-2xl md:text-3xl font-extrabold text-[#F5C542] drop-shadow-md">
+              <p className="text-lg sm:text-2xl md:text-3xl xl:text-[32px] font-extrabold text-[#F5C542] drop-shadow-md">
                 Soi đường tri thức – Vững bước tương lai
               </p>
             </div>
 
-            <p className="text-xs sm:text-base text-slate-100 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            <p className="text-xs sm:text-base xl:text-[17px] text-slate-100 max-w-2xl xl:max-w-3xl mx-auto lg:mx-0 leading-relaxed font-normal">
               Môi trường giáo dục thân thiện, kỷ cương và hiện đại nơi hải đảo Đông Bắc Tổ quốc. Nơi ươm mầm tri thức, rèn luyện nhân cách, chắp cánh ước mơ cho các thế hệ học sinh.
             </p>
 
@@ -67,7 +67,7 @@ export default function Hero() {
 
           {/* Right Column: Clean Student Portrait (5 cols) */}
           <div className="lg:col-span-5 flex justify-center z-10 mt-2 lg:mt-0">
-            <div className="relative w-full max-w-[320px] sm:max-w-md">
+            <div className="relative w-full max-w-[320px] sm:max-w-md lg:max-w-[390px] xl:max-w-[420px]">
               {/* Outer decorative glow / borders */}
               <div className="absolute -inset-1.5 bg-gradient-to-r from-amber-400 to-sky-400 rounded-3xl blur-md opacity-40"></div>
 

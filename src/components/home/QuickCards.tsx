@@ -20,13 +20,13 @@ export default function QuickCards() {
   };
 
   return (
-    <section className="relative z-20 -mt-10 sm:-mt-16 md:-mt-20 max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+    <section className="relative z-20 -mt-10 sm:-mt-16 md:-mt-20 max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-6">
         {QUICK_CARDS.map((card) => (
           <Link
             key={card.id}
             href={card.href}
-            className={`${card.bgColor} rounded-xl sm:rounded-2xl p-3.5 sm:p-6 shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between border border-white/70 group`}
+            className={`${card.bgColor} rounded-xl sm:rounded-2xl p-3.5 sm:p-6 xl:p-7 min-h-[190px] shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 flex flex-col justify-between border border-white/70 group`}
           >
             <div className="flex items-start justify-between gap-2">
               <div className="p-2 sm:p-3 bg-white/90 rounded-lg sm:rounded-xl shadow-xs">
