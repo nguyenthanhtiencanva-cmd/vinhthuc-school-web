@@ -47,7 +47,7 @@ export default function NewsAndEvents() {
                     <span>{FEATURED_NEWS.date}</span>
                   </div>
                   <h3 className="text-sm sm:text-lg font-bold text-[#062D62] group-hover:text-[#0867C8] transition-colors leading-snug line-clamp-2">
-                    <Link href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf" target="_blank">
+                    <Link href={`/tin-tuc/${FEATURED_NEWS.slug}`}>
                       {FEATURED_NEWS.title}
                     </Link>
                   </h3>
@@ -58,11 +58,10 @@ export default function NewsAndEvents() {
 
                 <div className="pt-3 sm:pt-4 mt-2 border-t border-slate-100">
                   <Link
-                    href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
-                    target="_blank"
+                    href={`/tin-tuc/${FEATURED_NEWS.slug}`}
                     className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0867C8] hover:text-[#062D62] group/btn"
                   >
-                    <span>Xem quyết định</span>
+                    <span>Xem chi tiết</span>
                     <ArrowRight className="w-3.5 h-3.5 group-hover/btn:translate-x-1 transition-transform" />
                   </Link>
                 </div>

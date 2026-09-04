@@ -44,18 +44,26 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-featured",
-  title: "Quyết định sáp nhập thành Trường Tiểu học và Trung học cơ sở Vĩnh Thực",
-  category: "VĂN BẢN NHÀ TRƯỜNG",
-  date: "15/10/2025",
+  id: "news-tong-ket-2025-2026",
+  title: "Tổng kết năm học 2025–2026 – Nhìn lại dấu ấn, mở ra những nhiệm vụ mới",
+  category: "TỔNG KẾT & SỰ KIỆN",
+  date: "03/09/2026",
   summary:
-    "Theo Quyết định số 220/QĐ-UBND, ba cơ sở giáo dục trên địa bàn được sáp nhập thành Trường Tiểu học và Trung học cơ sở Vĩnh Thực, trực thuộc UBND xã Vĩnh Thực.",
-  image: "/images/news-featured.svg",
-  slug: "quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc",
+    "UBND xã Vĩnh Thực tổ chức Hội nghị tổng kết năm học 2025–2026 và triển khai nhiệm vụ năm học 2026–2027; biểu dương khen thưởng các tập thể, cá nhân xuất sắc và thúc đẩy chuyển đổi số, STEM.",
+  image: "/images/tong-ket-nam-hoc-2025-2026.jpg",
+  slug: "tong-ket-nam-hoc-2025-2026-nhiem-vu-nam-hoc-moi",
   featured: true,
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-featured-old",
+    title: "Quyết định sáp nhập thành Trường Tiểu học và Trung học cơ sở Vĩnh Thực",
+    category: "VĂN BẢN NHÀ TRƯỜNG",
+    date: "15/10/2025",
+    image: "/images/news-featured.svg",
+    slug: "quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc",
+  },
   {
     id: "news-1",
     title: "Học sinh khối 6 trải nghiệm tham quan di tích lịch sử",
@@ -79,14 +87,6 @@ export const RECENT_NEWS: NewsItem[] = [
     date: "20/05/2024",
     image: "/images/news-3.svg",
     slug: "to-toan-tin-ung-dung-cntt",
-  },
-  {
-    id: "news-4",
-    title: "Học sinh đạt giải tại kỳ thi học sinh giỏi cấp thành phố",
-    category: "THÀNH TÍCH",
-    date: "18/05/2024",
-    image: "/images/news-4.svg",
-    slug: "hoc-sinh-dat-giai-hsg-thanh-pho",
   },
 ];
 
