@@ -44,25 +44,25 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-tong-ket-2025-2026",
-  title: "Tổng kết năm học 2025–2026 – Nhìn lại dấu ấn, mở ra những nhiệm vụ mới",
-  category: "TỔNG KẾT & SỰ KIỆN",
-  date: "03/09/2026",
+  id: "news-tong-ket-hoat-dong-he-2026",
+  title: "Hội nghị tổng kết các hoạt động quản lý, giáo dục thanh thiếu nhi, học sinh hè năm 2026",
+  category: "HOẠT ĐỘNG HÈ",
+  date: "04/09/2026",
   summary:
-    "UBND xã Vĩnh Thực tổ chức Hội nghị tổng kết năm học 2025–2026 và triển khai nhiệm vụ năm học 2026–2027; biểu dương khen thưởng các tập thể, cá nhân xuất sắc và thúc đẩy chuyển đổi số, STEM.",
-  image: "/images/tong-ket-nam-hoc-2025-2026.jpg",
-  slug: "tong-ket-nam-hoc-2025-2026-nhiem-vu-nam-hoc-moi",
+    "Ban Chỉ đạo hoạt động hè xã Vĩnh Thực tổng kết công tác quản lý, chăm sóc và giáo dục thanh thiếu nhi, học sinh hè năm 2026.",
+  image: "/images/tong-ket-hoat-dong-he-2026.jpg",
+  slug: "tong-ket-hoat-dong-quan-ly-giao-duc-thanh-thieu-nhi-he-2026",
   featured: true,
 };
 
 export const RECENT_NEWS: NewsItem[] = [
   {
-    id: "news-featured-old",
-    title: "Quyết định sáp nhập thành Trường Tiểu học và Trung học cơ sở Vĩnh Thực",
-    category: "VĂN BẢN NHÀ TRƯỜNG",
-    date: "15/10/2025",
-    image: "/images/news-featured.svg",
-    slug: "quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc",
+    id: "news-tong-ket-2025-2026",
+    title: "Tổng kết năm học 2025–2026 – Nhìn lại dấu ấn, mở ra những nhiệm vụ mới",
+    category: "TỔNG KẾT & SỰ KIỆN",
+    date: "03/09/2026",
+    image: "/images/tong-ket-nam-hoc-2025-2026.jpg",
+    slug: "tong-ket-nam-hoc-2025-2026-nhiem-vu-nam-hoc-moi",
   },
   {
     id: "news-1",
