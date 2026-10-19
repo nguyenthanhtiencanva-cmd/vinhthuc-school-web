@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -10,15 +12,41 @@ import {
   FileText,
   Download,
   ShieldCheck,
+  Eye,
+  ExternalLink,
+  X,
 } from "lucide-react";
 import { FEATURED_NEWS, RECENT_NEWS, UPCOMING_EVENTS } from "@/data/mock-data";
 
 export default function NewsAndEvents() {
+  const [isPdfModalOpen, setIsPdfModalOpen] = useState(false);
+
+  // Keyboard navigation & body scroll lock for PDF modal
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setIsPdfModalOpen(false);
+      }
+    };
+
+    if (isPdfModalOpen) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [isPdfModalOpen]);
+
   return (
     <section id="tin-tuc" className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 py-10 sm:py-14 md:py-18 xl:py-20">
       {/* 1. Official Notice Card: Văn bản / Quyết định công khai */}
       <div className="mb-10 sm:mb-12">
-        <div className="relative overflow-hidden rounded-2xl sm:rounded-3xl border border-sky-200/80 bg-gradient-to-r from-blue-50/90 via-white to-sky-50/70 p-5 sm:p-6 lg:p-7 shadow-xs hover:shadow-md hover:border-sky-300 transition-all group">
+        <div className="border-l-4 border-l-amber-500 bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200/80 hover:shadow-md transition-all group relative">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 sm:gap-6">
             {/* Left: Document Icon Badge */}
             <div className="flex items-center gap-4 shrink-0">
@@ -27,12 +55,12 @@ export default function NewsAndEvents() {
                 <span className="text-[9px] font-black tracking-wider uppercase mt-0.5">PDF</span>
               </div>
               <div>
-                <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-red-100/80 text-red-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1">
-                  <ShieldCheck className="w-3 h-3" />
-                  <span>VĂN BẢN CÔNG KHAI</span>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 border border-red-100">
+                  <ShieldCheck className="w-3.5 h-3.5 text-red-600" />
+                  <span>VĂN BẢN QUẢN LÝ NHÀ NƯỚC • PDF CHÍNH THỨC</span>
                 </div>
                 <div className="text-xs sm:text-sm font-semibold text-slate-500">
-                  Số hiệu: 220/QĐ-UBND • Ngày ban hành: 15/10/2025
+                  Số hiệu: 220/QĐ-UBND • Ngày ban hành: 15/10/2025 • Cơ quan: UBND xã Vĩnh Thực
                 </div>
               </div>
             </div>
@@ -47,16 +75,26 @@ export default function NewsAndEvents() {
               </p>
             </div>
 
-            {/* Right: Download / View Action */}
-            <div className="w-full lg:w-auto shrink-0 pt-2 lg:pt-0">
+            {/* Right: Actions */}
+            <div className="w-full lg:w-auto shrink-0 flex flex-col sm:flex-row items-stretch sm:items-center gap-2.5 pt-2 lg:pt-0">
+              <button
+                type="button"
+                onClick={() => setIsPdfModalOpen(true)}
+                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-sky-700/25 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+              >
+                <Eye className="w-4 h-4 text-sky-200" />
+                <span>Đọc văn bản trực tiếp</span>
+              </button>
+
               <a
                 href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="w-full lg:w-auto inline-flex items-center justify-center gap-2.5 px-5 py-3.5 rounded-2xl bg-sky-700 hover:bg-sky-800 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-md shadow-sky-700/25 transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm tracking-wide transition-all shadow-2xs hover:-translate-y-0.5 active:translate-y-0"
+                title="Mở tab mới hoặc tải về máy"
               >
-                <Download className="w-4 h-4" />
-                <span>XEM &amp; TẢI QUYẾT ĐỊNH (PDF)</span>
+                <Download className="w-4 h-4 text-sky-700" />
+                <span>Tải PDF gốc</span>
               </a>
             </div>
           </div>
@@ -162,42 +200,42 @@ export default function NewsAndEvents() {
                       />
                     </div>
 
-                  <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
-                    <div>
-                      <div className="flex items-center justify-between gap-1 mb-1.5">
-                        <span className="bg-sky-50 text-sky-700 text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full truncate max-w-[120px]">
-                          {item.category}
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-medium shrink-0">
-                          {item.date}
-                        </span>
+                    <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
+                      <div>
+                        <div className="flex items-center justify-between gap-1 mb-1.5">
+                          <span className="bg-sky-50 text-sky-700 text-[10px] sm:text-xs font-semibold px-2 py-0.5 rounded-full truncate max-w-[120px]">
+                            {item.category}
+                          </span>
+                          <span className="text-[10px] text-slate-400 font-medium shrink-0">
+                            {item.date}
+                          </span>
+                        </div>
+                        <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug line-clamp-2">
+                          {item.slug.startsWith("tong-ket") ? (
+                            <Link href={`/tin-tuc/${item.slug}`}>{item.title}</Link>
+                          ) : (
+                            <Link href={`#tin-tuc/${item.slug}`}>{item.title}</Link>
+                          )}
+                        </h4>
                       </div>
-                      <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug line-clamp-2">
-                        {item.slug.startsWith("tong-ket") ? (
-                          <Link href={`/tin-tuc/${item.slug}`}>{item.title}</Link>
-                        ) : (
-                          <Link href={`#tin-tuc/${item.slug}`}>{item.title}</Link>
-                        )}
-                      </h4>
-                    </div>
 
-                    <div className="pt-1">
-                      {item.slug.startsWith("tong-ket") ? (
-                        <Link
-                          href={`/tin-tuc/${item.slug}`}
-                          className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-700 hover:text-sky-900"
-                        >
-                          <span>Xem bài viết</span>
-                          <ChevronRight className="w-3 h-3" />
-                        </Link>
-                      ) : (
-                        <span className="text-[10px] text-slate-400 font-medium">Bản tin nội bộ</span>
-                      )}
+                      <div className="pt-1">
+                        {item.slug.startsWith("tong-ket") ? (
+                          <Link
+                            href={`/tin-tuc/${item.slug}`}
+                            className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-700 hover:text-sky-900"
+                          >
+                            <span>Xem bài viết</span>
+                            <ChevronRight className="w-3 h-3" />
+                          </Link>
+                        ) : (
+                          <span className="text-[10px] text-slate-400 font-medium">Bản tin nội bộ</span>
+                        )}
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
+                );
+              })}
             </div>
           </div>
         </div>
@@ -252,6 +290,79 @@ export default function NewsAndEvents() {
           </div>
         </div>
       </div>
+
+      {/* Inline PDF Preview Modal */}
+      {isPdfModalOpen && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-3 sm:p-5 md:p-6 animate-in fade-in duration-200"
+          onClick={() => setIsPdfModalOpen(false)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Cửa sổ xem toàn văn Quyết định 220"
+        >
+          <div
+            className="relative w-full max-w-5xl bg-white rounded-2xl sm:rounded-3xl shadow-2xl overflow-hidden flex flex-col max-h-[95vh] border border-slate-700"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-4 sm:px-6 py-3.5 bg-slate-900 text-white border-b border-slate-800 gap-3">
+              <div className="flex items-center gap-2.5 min-w-0">
+                <div className="w-8 h-8 rounded-lg bg-red-600 flex items-center justify-center shrink-0">
+                  <FileText className="w-4 h-4 text-white" />
+                </div>
+                <div className="min-w-0">
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] font-bold uppercase bg-red-500/30 text-red-300 px-2 py-0.5 rounded">
+                      PDF CHÍNH THỨC
+                    </span>
+                    <span className="text-xs text-slate-400 hidden sm:inline">
+                      Số 220/QĐ-UBND • Ngày 15/10/2025
+                    </span>
+                  </div>
+                  <h4 className="text-xs sm:text-sm font-bold text-white truncate mt-0.5">
+                    Quyết định sáp nhập Trường Tiểu học &amp; THCS Vĩnh Thực
+                  </h4>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2 shrink-0">
+                <a
+                  href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-700 hover:bg-sky-600 text-white text-xs font-semibold transition-colors"
+                >
+                  <ExternalLink className="w-3.5 h-3.5" />
+                  <span className="hidden sm:inline">Mở tab mới / Tải xuống</span>
+                  <span className="sm:hidden">Tải về</span>
+                </a>
+
+                <button
+                  onClick={() => setIsPdfModalOpen(false)}
+                  className="p-1.5 sm:p-2 rounded-xl text-slate-400 hover:text-white hover:bg-slate-800 transition-colors cursor-pointer"
+                  aria-label="Đóng cửa sổ"
+                >
+                  <X className="w-5 h-5" />
+                </button>
+              </div>
+            </div>
+
+            {/* Modal Body: Embedded PDF iframe */}
+            <div className="flex-1 w-full bg-slate-100 p-2 sm:p-3 overflow-hidden">
+              <iframe
+                src="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf#toolbar=1"
+                className="w-full h-[72vh] sm:h-[80vh] rounded-xl border border-slate-200 shadow-inner bg-white"
+                title="Toàn văn Quyết định 220/QĐ-UBND"
+              />
+            </div>
+
+            {/* Modal Footer Note */}
+            <div className="px-4 py-2.5 bg-slate-50 border-t border-slate-200 text-center text-[11px] text-slate-500">
+              Văn bản ban hành bởi Ủy ban nhân dân xã Vĩnh Thực, Thành phố Quảng Ninh. Phụ huynh và học sinh có thể phóng to, thu nhỏ hoặc tải về trực tiếp.
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
