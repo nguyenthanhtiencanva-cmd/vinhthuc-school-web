@@ -1,9 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, Sparkles, ExternalLink } from "lucide-react";
+import { Camera, Sparkles, ExternalLink, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { FEATURED_ACTIVITIES } from "@/data/mock-data";
 
 interface GalleryPhoto {
@@ -129,6 +129,7 @@ const ALL_PHOTOS: GalleryPhoto[] = [
 
 export default function FeaturedActivities() {
   const [activeTab, setActiveTab] = useState<string>("all");
+  const [activeLightboxIndex, setActiveLightboxIndex] = useState<number | null>(null);
 
   const filteredPhotos =
     activeTab === "all"
@@ -138,6 +139,36 @@ export default function FeaturedActivities() {
       : activeTab === "tong-ket"
       ? ALL_PHOTOS.filter((p) => !p.category.includes("HÈ"))
       : ALL_PHOTOS;
+
+  // Keyboard navigation for Lightbox
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (activeLightboxIndex === null) return;
+      if (e.key === "Escape") {
+        setActiveLightboxIndex(null);
+      } else if (e.key === "ArrowLeft") {
+        setActiveLightboxIndex((prev) =>
+          prev !== null ? (prev - 1 + filteredPhotos.length) % filteredPhotos.length : 0
+        );
+      } else if (e.key === "ArrowRight") {
+        setActiveLightboxIndex((prev) =>
+          prev !== null ? (prev + 1) % filteredPhotos.length : 0
+        );
+      }
+    };
+
+    if (activeLightboxIndex !== null) {
+      document.body.style.overflow = "hidden";
+      window.addEventListener("keydown", handleKeyDown);
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+      window.removeEventListener("keydown", handleKeyDown);
+    };
+  }, [activeLightboxIndex, filteredPhotos.length]);
 
   return (
     <section id="thu-vien" className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 py-10 sm:py-14 md:py-18 xl:py-20 border-t border-slate-200/60">
@@ -157,7 +188,10 @@ export default function FeaturedActivities() {
         {/* Filter Tabs */}
         <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
           <button
-            onClick={() => setActiveTab("all")}
+            onClick={() => {
+              setActiveTab("all");
+              setActiveLightboxIndex(null);
+            }}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               activeTab === "all"
                 ? "bg-sky-700 text-white shadow-xs"
@@ -167,7 +201,10 @@ export default function FeaturedActivities() {
             Tất cả ({ALL_PHOTOS.length})
           </button>
           <button
-            onClick={() => setActiveTab("tong-ket")}
+            onClick={() => {
+              setActiveTab("tong-ket");
+              setActiveLightboxIndex(null);
+            }}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               activeTab === "tong-ket"
                 ? "bg-sky-700 text-white shadow-xs"
@@ -177,7 +214,10 @@ export default function FeaturedActivities() {
             Tổng kết năm học (11)
           </button>
           <button
-            onClick={() => setActiveTab("he")}
+            onClick={() => {
+              setActiveTab("he");
+              setActiveLightboxIndex(null);
+            }}
             className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
               activeTab === "he"
                 ? "bg-sky-700 text-white shadow-xs"
@@ -191,20 +231,29 @@ export default function FeaturedActivities() {
 
       {/* Bento Photo Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        {filteredPhotos.map((photo) => (
+        {filteredPhotos.map((photo, index) => (
           <div
             key={photo.id}
+            onClick={() => setActiveLightboxIndex(index)}
             className={`group relative ${photo.span || "col-span-1"} ${
               photo.aspect || "aspect-[4/3]"
-            } rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 bg-slate-100 border border-slate-200/70 hover:-translate-y-1`}
+            } rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 bg-slate-100 border border-slate-200/70 hover:-translate-y-1 cursor-pointer`}
           >
             <Image
               src={photo.src}
               alt={photo.alt}
               fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 360px"
-              className="object-cover group-hover:scale-105 transition-transform duration-500"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
+              className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
             />
+
+            {/* Hover Zoom Icon Pill */}
+            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              <span className="p-2 rounded-xl bg-slate-950/75 backdrop-blur-md text-white flex items-center gap-1 text-[11px] font-semibold border border-white/20 shadow-lg">
+                <ZoomIn className="w-3.5 h-3.5 text-amber-400" />
+                <span>Phóng to</span>
+              </span>
+            </div>
 
             {/* Gradient Overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 sm:p-5 flex flex-col justify-end text-white">
@@ -215,7 +264,10 @@ export default function FeaturedActivities() {
                 {photo.alt}
               </p>
               {photo.link && (
-                <div className="mt-2 pt-2 border-t border-white/20 flex items-center justify-between text-[11px] text-sky-200 font-medium">
+                <div
+                  className="mt-2 pt-2 border-t border-white/20 flex items-center justify-between text-[11px] text-sky-200 font-medium"
+                  onClick={(e) => e.stopPropagation()}
+                >
                   <Link
                     href={photo.link}
                     className="inline-flex items-center gap-1 hover:text-white transition-colors"
@@ -230,7 +282,7 @@ export default function FeaturedActivities() {
         ))}
       </div>
 
-      {/* 6 Core School Themes (Preserve mock data activities) */}
+      {/* 6 Core School Themes (Standardized SVG illustrations) */}
       <div className="mt-10 pt-8 border-t border-slate-100">
         <h3 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-slate-500 mb-4 flex items-center gap-2">
           <Sparkles className="w-4 h-4 text-amber-500" />
@@ -242,7 +294,7 @@ export default function FeaturedActivities() {
               key={act.id}
               className="group bg-white rounded-xl border border-slate-200/80 p-3 text-center shadow-xs hover:shadow-md hover:border-sky-300 transition-all flex flex-col items-center justify-center gap-2"
             >
-              <div className="relative w-10 h-10 rounded-lg overflow-hidden bg-sky-50 flex items-center justify-center p-1.5">
+              <div className="relative w-12 h-12 rounded-xl overflow-hidden bg-gradient-to-br from-slate-50 via-sky-50/50 to-blue-50/40 ring-1 ring-inset ring-slate-900/5 flex items-center justify-center p-2 group-hover:scale-105 transition-transform">
                 <Image
                   src={act.image}
                   alt={act.title}
@@ -262,6 +314,98 @@ export default function FeaturedActivities() {
           ))}
         </div>
       </div>
+
+      {/* Interactive Lightbox Modal */}
+      {activeLightboxIndex !== null && filteredPhotos[activeLightboxIndex] && (
+        <div
+          className="fixed inset-0 z-50 bg-slate-950/90 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-8 animate-in fade-in duration-200"
+          onClick={() => setActiveLightboxIndex(null)}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Xem ảnh phóng to"
+        >
+          {/* Close Button */}
+          <button
+            onClick={() => setActiveLightboxIndex(null)}
+            className="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all z-20 focus:outline-none cursor-pointer"
+            aria-label="Đóng xem ảnh"
+          >
+            <X className="w-6 h-6" />
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveLightboxIndex((prev) =>
+                prev !== null ? (prev - 1 + filteredPhotos.length) % filteredPhotos.length : 0
+              );
+            }}
+            className="absolute left-3 sm:left-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all z-20 focus:outline-none cursor-pointer"
+            aria-label="Ảnh trước"
+          >
+            <ChevronLeft className="w-6 h-6 sm:w-7 sm:h-7" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveLightboxIndex((prev) =>
+                prev !== null ? (prev + 1) % filteredPhotos.length : 0
+              );
+            }}
+            className="absolute right-3 sm:right-6 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 hover:bg-white/25 text-white flex items-center justify-center transition-all z-20 focus:outline-none cursor-pointer"
+            aria-label="Ảnh tiếp theo"
+          >
+            <ChevronRight className="w-6 h-6 sm:w-7 sm:h-7" />
+          </button>
+
+          {/* Modal Content Container */}
+          <div
+            className="relative max-w-5xl w-full flex flex-col items-center max-h-[92vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Image Frame */}
+            <div className="relative w-full aspect-[16/10] max-h-[76vh] rounded-2xl overflow-hidden shadow-2xl border border-white/20 bg-slate-900">
+              <Image
+                src={filteredPhotos[activeLightboxIndex].src}
+                alt={filteredPhotos[activeLightboxIndex].alt}
+                fill
+                sizes="(max-width: 1280px) 100vw, 1200px"
+                className="object-contain"
+                priority
+              />
+            </div>
+
+            {/* Caption & Controls */}
+            <div className="mt-3.5 w-full flex flex-col sm:flex-row items-center justify-between gap-3 bg-white/10 backdrop-blur-md px-5 py-3 rounded-2xl border border-white/15 text-white">
+              <div className="text-center sm:text-left">
+                <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block mb-0.5">
+                  {filteredPhotos[activeLightboxIndex].category}
+                </span>
+                <p className="text-xs sm:text-sm font-medium text-slate-200">
+                  {filteredPhotos[activeLightboxIndex].alt}
+                </p>
+              </div>
+              <div className="flex items-center gap-4 shrink-0 text-xs text-sky-200 font-semibold">
+                <span>
+                  {activeLightboxIndex + 1} / {filteredPhotos.length}
+                </span>
+                {filteredPhotos[activeLightboxIndex].link && (
+                  <Link
+                    href={filteredPhotos[activeLightboxIndex].link!}
+                    className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-sky-700 hover:bg-sky-600 text-white transition-colors"
+                  >
+                    <span>Xem bài viết</span>
+                    <ExternalLink className="w-3.5 h-3.5" />
+                  </Link>
+                )}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

@@ -104,7 +104,7 @@ export default function AboutSection() {
                 alt="Hải đăng Vĩnh Thực"
                 fill
                 sizes="(max-width: 640px) 100vw, 420px"
-                className="object-cover group-hover/img:scale-105 transition-transform duration-500"
+                className="object-cover object-[center_20%] group-hover/img:scale-105 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
             </div>

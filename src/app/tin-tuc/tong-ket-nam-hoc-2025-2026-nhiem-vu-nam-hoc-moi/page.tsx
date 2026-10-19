@@ -43,7 +43,7 @@ export default function TongKetNamHocPage() {
               fill
               priority
               sizes="(max-width: 896px) 100vw, 896px"
-              className="object-cover"
+              className="object-cover object-[center_20%]"
             />
           </div>
 
@@ -105,7 +105,7 @@ export default function TongKetNamHocPage() {
                       alt={photo.alt}
                       fill
                       sizes={index === 0 || index === 4 || index === 10 ? "(max-width: 640px) 100vw, 800px" : "(max-width: 640px) 100vw, 400px"}
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity p-4 flex flex-col justify-end text-white text-xs font-medium">
                       {photo.alt}

@@ -91,7 +91,7 @@ export default function Hero() {
                   alt="Học sinh Trường TH & THCS Vĩnh Thực"
                   fill
                   sizes="(max-width: 640px) 340px, (max-width: 1024px) 100vw, 450px"
-                  className="object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                   priority
                 />
 

@@ -92,7 +92,7 @@ export default function NewsAndEvents() {
                   alt={FEATURED_NEWS.title}
                   fill
                   sizes="(max-width: 768px) 100vw, 550px"
-                  className="object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-3 left-3 flex items-center gap-2">
                   <span className="bg-sky-700/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
@@ -135,20 +135,32 @@ export default function NewsAndEvents() {
 
             {/* List of Secondary News (5 cols) */}
             <div className="md:col-span-5 flex flex-col space-y-4">
-              {RECENT_NEWS.map((item) => (
-                <div
-                  key={item.id}
-                  className="group bg-white rounded-2xl border border-slate-200/80 p-3 sm:p-3.5 shadow-xs hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex gap-3.5 items-stretch"
-                >
-                  <div className="relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 bg-slate-100">
-                    <Image
-                      src={item.image}
-                      alt={item.title}
-                      fill
-                      sizes="96px"
-                      className="object-cover group-hover:scale-105 transition-transform duration-500"
-                    />
-                  </div>
+              {RECENT_NEWS.map((item) => {
+                const isSvg = item.image.endsWith(".svg");
+                return (
+                  <div
+                    key={item.id}
+                    className="group bg-white rounded-2xl border border-slate-200/80 p-3 sm:p-3.5 shadow-xs hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex gap-3.5 items-stretch"
+                  >
+                    <div
+                      className={`relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 ${
+                        isSvg
+                          ? "bg-gradient-to-br from-slate-50 via-sky-50/50 to-blue-50/40 ring-1 ring-inset ring-slate-900/5 p-2 flex items-center justify-center"
+                          : "bg-slate-100"
+                      }`}
+                    >
+                      <Image
+                        src={item.image}
+                        alt={item.title}
+                        fill
+                        sizes="96px"
+                        className={
+                          isSvg
+                            ? "object-contain p-1 group-hover:scale-105 transition-transform duration-500"
+                            : "object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                        }
+                      />
+                    </div>
 
                   <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
                     <div>
@@ -184,7 +196,8 @@ export default function NewsAndEvents() {
                     </div>
                   </div>
                 </div>
-              ))}
+              );
+            })}
             </div>
           </div>
         </div>
