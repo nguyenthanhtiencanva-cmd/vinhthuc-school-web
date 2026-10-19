@@ -1,20 +1,64 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: var(--font-sans), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-heading: var(--font-heading), system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+  /* Oceanic Academic Palette */
+  --color-primary-navy: #0f172a; /* slate-900 */
+  --color-primary-blue: #1e3a8a; /* blue-900 */
+  --color-primary-sky: #0369a1;  /* sky-700 */
+
+  --color-accent-amber: #f59e0b; /* amber-500 */
+  --color-accent-orange: #f97316; /* orange-500 */
+
+  --color-surface-bg: #ffffff;
+  --color-surface-border: rgba(226, 232, 240, 0.8);
+}
+
 @layer base {
   :root {
-    --primary-navy: #062D62;
-    --primary-blue: #0867C8;
-    --accent-sky: #15A9E8;
-    --accent-gold: #F59E0B;
-    --accent-gold-dark: #D97706;
-    --bg-light: #F8FAFC;
-    --text-main: #0F172A;
+    --primary-navy: #0f172a;
+    --primary-blue: #1e3a8a;
+    --accent-sky: #0369a1;
+    --accent-gold: #f59e0b;
+    --accent-gold-dark: #d97706;
+    --bg-light: #f8fafc;
+    --text-main: #0f172a;
     --text-muted: #475569;
   }
-  
+
   html {
     scroll-behavior: smooth;
+    font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
   }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading), system-ui, -apple-system, sans-serif;
+    letter-spacing: -0.02em;
+  }
+}
+
+/* Oceanic Academic Reusable Surfaces & Utilities */
+.academic-surface {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+}
+
+.academic-surface-hover {
+  background-color: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px -1px rgba(0, 0, 0, 0.05);
+  border-radius: 1rem;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.academic-surface-hover:hover {
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  transform: translateY(-2px);
+  border-color: rgba(14, 165, 233, 0.4);
 }
 
 /* Custom wave & background patterns */

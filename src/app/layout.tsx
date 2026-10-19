@@ -1,11 +1,18 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro } from "next/font/google";
+import { Be_Vietnam_Pro, Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 
 const beVietnamPro = Be_Vietnam_Pro({
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["500", "600", "700", "800", "900"],
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-heading",
+  display: "swap",
+});
+
+const inter = Inter({
+  weight: ["400", "500", "600", "700"],
   subsets: ["latin", "vietnamese"],
   variable: "--font-sans",
   display: "swap",
@@ -26,8 +33,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" className={`${beVietnamPro.variable} font-sans`}>
-      <body className="min-h-screen flex flex-col bg-[#F8FAFC] text-[#0F172A] antialiased">
+    <html
+      lang="vi"
+      className={`${inter.variable} ${beVietnamPro.variable} scroll-smooth font-sans`}
+    >
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-sky-600 selection:text-white">
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />

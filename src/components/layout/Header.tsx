@@ -98,11 +98,11 @@ export default function Header() {
   };
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-white shadow-md">
+    <header className="w-full sticky top-0 z-50 backdrop-blur-md bg-white/90 border-b border-slate-200/80 shadow-xs transition-all">
       {/* Top Utility Bar */}
-      <div className="bg-[#062D62] text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-blue-900/40">
+      <div className="bg-slate-900 text-white text-[11px] sm:text-xs py-1.5 sm:py-2 px-3 sm:px-4 border-b border-slate-800/80">
         <div className="max-w-[1440px] mx-auto flex justify-between items-center gap-2">
-          <div className="flex items-center gap-1.5 text-slate-200 font-medium tracking-wide truncate">
+          <div className="flex items-center gap-2 text-slate-200 font-medium tracking-wide truncate">
             <span className="text-amber-400 font-semibold text-xs">★</span>
             <span className="truncate">Soi đường tri thức – Vững bước tương lai</span>
           </div>
@@ -110,20 +110,20 @@ export default function Header() {
           <div className="flex items-center gap-2 sm:gap-4 text-slate-200 text-[11px] sm:text-xs shrink-0">
             <a
               href="tel:0903280488"
-              className="flex items-center gap-1 hover:text-amber-400 transition-colors py-0.5"
+              className="flex items-center gap-1.5 hover:text-amber-400 transition-colors py-0.5"
             >
-              <Phone className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-amber-400" />
+              <Phone className="w-3.5 h-3.5 text-amber-400" />
               <span className="font-semibold hidden xs:inline sm:inline">0903 280 488</span>
               <span className="font-semibold xs:hidden sm:hidden">Gọi</span>
             </a>
-            <span className="text-slate-600">|</span>
+            <span className="text-slate-700">|</span>
             <a
               href="https://quangninh.tsdc.edu.vn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-1 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2 py-0.5 rounded transition-colors"
+              className="flex items-center gap-1.5 bg-amber-500 hover:bg-amber-400 text-slate-950 font-bold px-2.5 py-0.5 rounded-lg shadow-xs transition-all hover:scale-105 active:scale-95"
             >
-              <GraduationCap className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
+              <GraduationCap className="w-3.5 h-3.5" />
               <span>Tuyển sinh</span>
             </a>
           </div>
@@ -132,27 +132,30 @@ export default function Header() {
 
       {/* Main Header / Navigation */}
       <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
-        <div className="flex items-center justify-between h-16 sm:h-20 xl:h-[84px] gap-4">
+        <div className="flex items-center justify-between h-18 sm:h-20 xl:h-[84px] gap-4">
           {/* Logo & School Name */}
-          <Link href="/" className="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 xl:w-[300px] 2xl:w-[340px] shrink-0">
-            <div className="relative w-11 h-11 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-[#062D62] bg-white p-0.5 shadow-sm group-hover:scale-105 transition-transform shrink-0">
+          <Link
+            href="/"
+            className="flex items-center gap-3 sm:gap-3.5 group min-w-0 xl:w-[320px] 2xl:w-[360px] shrink-0"
+          >
+            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-1 shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all shrink-0">
               <Image
                 src="/brand/logo.jpeg"
                 alt="Logo Trường TH & THCS Vĩnh Thực"
                 fill
-                sizes="(max-width: 640px) 44px, 56px"
+                sizes="(max-width: 640px) 48px, 56px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-[9px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none truncate">
+              <span className="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none truncate">
                 UBND XÃ VĨNH THỰC
               </span>
-              <span className="text-xs sm:text-lg font-extrabold text-[#062D62] tracking-tight mt-0.5 leading-tight truncate">
+              <span className="text-xs sm:text-base xl:text-lg font-extrabold tracking-tight text-slate-900 mt-1 leading-tight truncate group-hover:text-sky-700 transition-colors">
                 TRƯỜNG TH &amp; THCS VĨNH THỰC
               </span>
-              <span className="text-[9px] sm:text-[11px] font-medium text-amber-600 italic leading-none mt-0.5 truncate hidden xs:block">
+              <span className="text-[10px] sm:text-[11px] font-medium text-amber-600 italic leading-none mt-1 truncate hidden xs:block">
                 Soi đường tri thức – Vững bước tương lai
               </span>
             </div>
@@ -173,22 +176,22 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 px-2 2xl:px-3 py-2.5 rounded-lg text-[11px] 2xl:text-xs font-bold whitespace-nowrap transition-all ${
+                    className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all ${
                       isHome
-                        ? "text-[#0867C8] bg-blue-50/80 font-extrabold"
-                        : "text-[#062D62] hover:text-[#0867C8] hover:bg-slate-50"
+                        ? "text-sky-700 bg-sky-50/90 font-bold shadow-2xs"
+                        : "text-slate-700 hover:text-sky-700 hover:bg-sky-50/80"
                     }`}
                   >
-                    {isHome && <HomeIcon className="w-3.5 h-3.5" />}
+                    {isHome && <HomeIcon className="w-4 h-4 text-sky-700" />}
                     <span>{item.name}</span>
                     {hasChildren && (
-                      <ChevronDown className="w-3 h-3 text-slate-400 group-hover:text-[#0867C8] transition-transform group-hover:rotate-180" />
+                      <ChevronDown className="w-3.5 h-3.5 text-slate-400 group-hover:text-sky-700 transition-transform group-hover:rotate-180" />
                     )}
                   </Link>
 
                   {/* Dropdown Menu */}
                   {hasChildren && activeDropdown === item.name && (
-                    <div className="absolute left-0 mt-0.5 w-56 rounded-lg bg-white shadow-xl border border-slate-100 py-2 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
+                    <div className="absolute left-0 mt-1.5 w-60 rounded-2xl bg-white/95 backdrop-blur-md shadow-xl border border-slate-200/80 p-1.5 z-50 animate-in fade-in slide-in-from-top-1 duration-150">
                       {item.children?.map((subItem) => {
                         const isExternal = subItem.href.startsWith("http");
                         return (
@@ -197,7 +200,7 @@ export default function Header() {
                             href={subItem.href}
                             target={isExternal ? "_blank" : undefined}
                             rel={isExternal ? "noopener noreferrer" : undefined}
-                            className="block px-4 py-2 text-xs font-medium text-slate-700 hover:bg-blue-50 hover:text-[#0867C8] transition-colors"
+                            className="block px-3.5 py-2 text-xs font-medium text-slate-700 hover:bg-sky-50 hover:text-sky-700 rounded-xl transition-colors"
                           >
                             {subItem.name}
                           </Link>
@@ -214,7 +217,7 @@ export default function Header() {
           <div className="flex items-center gap-2 xl:w-12 xl:justify-end shrink-0">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2.5 rounded-full bg-[#0867C8] text-white hover:bg-[#062D62] transition-colors shadow-sm focus:outline-none"
+              className="p-2.5 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-700 hover:text-sky-700 border border-slate-200/60 transition-all shadow-2xs focus:outline-none"
               title="Tìm kiếm"
               aria-label="Tìm kiếm"
             >
@@ -224,7 +227,7 @@ export default function Header() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2 rounded-lg text-[#062D62] hover:bg-slate-100 transition-colors focus:outline-none"
+              className="xl:hidden p-2.5 rounded-xl text-slate-700 hover:text-sky-700 hover:bg-slate-100 transition-colors focus:outline-none"
               aria-label="Mở menu"
             >
               {mobileMenuOpen ? (
@@ -238,7 +241,7 @@ export default function Header() {
 
         {/* Search Bar Collapsible */}
         {searchOpen && (
-          <div className="py-3 border-t border-slate-100 pb-4">
+          <div className="py-3 border-t border-slate-200/80 pb-4">
             <form
               onSubmit={(e) => {
                 e.preventDefault();
@@ -251,12 +254,12 @@ export default function Header() {
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Nhập thông tin cần tìm: tuyển sinh, lịch công tác, tin tức..."
-                className="flex-1 px-4 py-2 text-sm rounded-lg border border-slate-300 focus:outline-none focus:ring-2 focus:ring-[#0867C8] text-slate-800"
+                className="flex-1 px-4 py-2.5 text-sm rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-sky-600 text-slate-800 bg-white"
                 autoFocus
               />
               <button
                 type="submit"
-                className="px-4 py-2 bg-[#0867C8] text-white text-sm font-semibold rounded-lg hover:bg-[#062D62] transition-colors"
+                className="px-5 py-2.5 bg-sky-700 text-white text-sm font-semibold rounded-xl hover:bg-sky-800 transition-colors shadow-sm"
               >
                 Tìm
               </button>
@@ -267,21 +270,21 @@ export default function Header() {
 
       {/* Mobile Drawer Menu */}
       {mobileMenuOpen && (
-        <div className="xl:hidden bg-white border-t border-slate-200 px-4 pt-3 pb-8 max-h-[85vh] overflow-y-auto shadow-2xl animate-in slide-in-from-top-2 duration-200">
+        <div className="xl:hidden bg-white/98 backdrop-blur-lg border-t border-slate-200/80 px-4 pt-3 pb-8 max-h-[85vh] overflow-y-auto shadow-2xl animate-in slide-in-from-top-2 duration-200">
           {/* Quick actions top of mobile drawer */}
           <div className="grid grid-cols-2 gap-2 mb-3 pb-3 border-b border-slate-100">
             <a
               href="tel:0903280488"
-              className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-blue-50 text-[#062D62] text-xs font-bold hover:bg-blue-100 transition-colors"
+              className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-sky-50 text-sky-800 text-xs font-bold hover:bg-sky-100 transition-colors border border-sky-100"
             >
-              <Phone className="w-4 h-4 text-[#0867C8]" />
+              <Phone className="w-4 h-4 text-sky-700" />
               <span>0903 280 488</span>
             </a>
             <a
               href="https://quangninh.tsdc.edu.vn/"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-colors"
+              className="flex items-center justify-center gap-2 p-2.5 rounded-xl bg-amber-500 text-slate-950 text-xs font-bold hover:bg-amber-400 transition-colors shadow-2xs"
             >
               <GraduationCap className="w-4 h-4" />
               <span>Tuyển sinh</span>
@@ -299,19 +302,19 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => !hasChildren && setMobileMenuOpen(false)}
-                      className="flex-1 py-2.5 px-2 rounded-lg text-sm font-bold text-[#062D62] hover:bg-blue-50 hover:text-[#0867C8]"
+                      className="flex-1 py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-sky-50 hover:text-sky-700"
                     >
                       {item.name}
                     </Link>
                     {hasChildren && (
                       <button
                         onClick={() => toggleMobileSubmenu(item.name)}
-                        className="p-2 rounded-lg text-slate-500 hover:bg-slate-100 transition-transform"
+                        className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 transition-transform"
                         aria-label={`Mở mục ${item.name}`}
                       >
                         <ChevronDown
                           className={`w-4 h-4 transition-transform duration-200 ${
-                            isExpanded ? "rotate-180 text-[#0867C8]" : ""
+                            isExpanded ? "rotate-180 text-sky-700" : ""
                           }`}
                         />
                       </button>
@@ -329,7 +332,7 @@ export default function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                             target={isExternal ? "_blank" : undefined}
                             rel={isExternal ? "noopener noreferrer" : undefined}
-                            className="block py-2 px-2 text-xs font-medium text-slate-700 hover:text-[#0867C8] hover:bg-blue-50/80 rounded-md transition-colors"
+                            className="block py-2 px-3 text-xs font-medium text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 rounded-lg transition-colors"
                           >
                             {sub.name}
                           </Link>
