@@ -10,7 +10,6 @@ import {
   FileText,
   Download,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { FEATURED_NEWS, RECENT_NEWS, UPCOMING_EVENTS } from "@/data/mock-data";
 

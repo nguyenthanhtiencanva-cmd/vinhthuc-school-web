@@ -12,46 +12,47 @@ import {
 
 export default function Footer() {
   return (
-    <footer id="lien-he" className="bg-[#062D62] text-white pt-10 sm:pt-14 pb-8 border-t-4 border-[#0867C8]">
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-12 gap-6 sm:gap-8 pb-8 sm:pb-12 border-b border-blue-900/60">
-          {/* Col 1: Brand & Logo (3 cols) */}
-          <div className="sm:col-span-2 lg:col-span-3 space-y-3 sm:space-y-4">
-            <div className="flex items-center gap-2.5 sm:gap-3">
-              <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden border-2 border-white bg-white p-0.5 shadow-md shrink-0">
+    <footer id="lien-he" className="bg-slate-950 text-slate-300 border-t border-slate-800">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 py-12 sm:py-14 border-b border-slate-800/80">
+          {/* Col 1: Brand & Logo (5 cols) */}
+          <div className="md:col-span-2 lg:col-span-5 space-y-4">
+            <div className="flex items-center gap-3.5">
+              <div className="relative w-14 h-14 rounded-2xl overflow-hidden border border-slate-700 bg-white p-1 shadow-md shrink-0">
                 <Image
                   src="/brand/logo.jpeg"
                   alt="Logo Trường TH & THCS Vĩnh Thực"
                   fill
-                  sizes="(max-width: 640px) 48px, 56px"
+                  sizes="56px"
                   className="object-contain"
                 />
               </div>
               <div className="flex flex-col min-w-0">
-                <span className="text-[9px] sm:text-[10px] font-semibold text-sky-300 uppercase tracking-wider leading-none truncate">
+                <span className="text-[10px] sm:text-[11px] font-semibold text-sky-400 uppercase tracking-wider leading-none truncate">
                   UBND XÃ VĨNH THỰC
                 </span>
-                <span className="text-xs sm:text-sm font-bold text-white tracking-tight mt-0.5 sm:mt-1 leading-tight truncate">
+                <span className="text-sm sm:text-base xl:text-lg font-extrabold text-white tracking-tight mt-1 leading-tight truncate">
                   TRƯỜNG TH &amp; THCS VĨNH THỰC
                 </span>
               </div>
             </div>
 
-            <p className="text-[11px] sm:text-xs text-amber-300 font-semibold italic">
+            <p className="text-xs text-amber-400 font-semibold italic">
               Soi đường tri thức – Vững bước tương lai
             </p>
 
-            <p className="text-xs text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed max-w-md">
               Trường học hạnh phúc nơi biển đảo quê hương. Chắp cánh ước mơ cho các thế hệ mầm non tương lai đất nước.
             </p>
 
             {/* Social Icons */}
-            <div className="flex items-center gap-2 pt-0.5">
+            <div className="flex items-center gap-2.5 pt-1">
               <a
                 href="https://www.facebook.com/ththcsvinhthuc"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#1877F2] flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-sky-500 hover:bg-[#1877F2] text-slate-300 hover:text-white flex items-center justify-center transition-all"
                 aria-label="Facebook"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -62,7 +63,7 @@ export default function Footer() {
                 href="https://youtube.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#FF0000] flex items-center justify-center transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-red-500 hover:bg-[#FF0000] text-slate-300 hover:text-white flex items-center justify-center transition-all"
                 aria-label="YouTube"
               >
                 <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24">
@@ -73,7 +74,7 @@ export default function Footer() {
                 href="https://zalo.me"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-[#0068FF] flex items-center justify-center font-bold text-[10px] transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-blue-400 hover:bg-[#0068FF] text-slate-300 hover:text-white flex items-center justify-center font-bold text-[11px] transition-all"
                 aria-label="Zalo"
               >
                 Zalo
@@ -82,7 +83,7 @@ export default function Footer() {
                 href="https://tiktok.com"
                 target="_blank"
                 rel="noreferrer"
-                className="w-8 h-8 rounded-full bg-white/10 hover:bg-black flex items-center justify-center font-bold text-[10px] transition-colors"
+                className="w-9 h-9 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-500 hover:bg-black text-slate-300 hover:text-white flex items-center justify-center font-bold text-[11px] transition-all"
                 aria-label="TikTok"
               >
                 TikTok
@@ -91,28 +92,36 @@ export default function Footer() {
           </div>
 
           {/* Col 2: Liên hệ (3 cols) */}
-          <div className="lg:col-span-3 space-y-2.5 sm:space-y-3">
-            <h3 className="text-xs sm:text-sm font-bold text-sky-300 uppercase tracking-wider border-b border-blue-800/80 pb-1.5 sm:pb-2">
+          <div className="lg:col-span-3 space-y-3.5">
+            <h3 className="text-xs sm:text-sm font-bold text-sky-400 uppercase tracking-wider border-b border-slate-800 pb-2">
               LIÊN HỆ
             </h3>
-            <ul className="space-y-2 text-xs text-slate-300">
-              <li className="flex items-start gap-2">
+            <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
+              <li className="flex items-start gap-2.5">
                 <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                <span>Trụ sở chính: thôn Vĩnh Thực 2, xã Vĩnh Thực, TP. Quảng Ninh</span>
+                <span className="leading-relaxed">
+                  Trụ sở chính: thôn Vĩnh Thực 2, xã Vĩnh Thực, TP. Quảng Ninh
+                </span>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />
-                <a href="tel:0903280488" className="font-semibold text-white hover:text-amber-400">
+                <a
+                  href="tel:0903280488"
+                  className="font-semibold text-white hover:text-amber-400 transition-colors"
+                >
                   0903 280 488
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-emerald-400 shrink-0" />
-                <a href="mailto:c12vinhthuc.vinhthuc@quangninh.edu.vn" className="hover:text-amber-400 truncate">
+                <a
+                  href="mailto:c12vinhthuc.vinhthuc@quangninh.edu.vn"
+                  className="hover:text-amber-400 transition-colors break-all"
+                >
                   c12vinhthuc.vinhthuc@quangninh.edu.vn
                 </a>
               </li>
-              <li className="flex items-center gap-2">
+              <li className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-purple-400 shrink-0" />
                 <span>Thứ 2 - Thứ 6: 07:00 - 17:00</span>
               </li>
@@ -120,11 +129,11 @@ export default function Footer() {
           </div>
 
           {/* Col 3: Liên kết nhanh (2 cols) */}
-          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-            <h3 className="text-xs sm:text-sm font-bold text-sky-300 uppercase tracking-wider border-b border-blue-800/80 pb-1.5 sm:pb-2">
+          <div className="lg:col-span-2 space-y-3.5">
+            <h3 className="text-xs sm:text-sm font-bold text-sky-400 uppercase tracking-wider border-b border-slate-800 pb-2">
               LIÊN KẾT NHANH
             </h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-1.5 sm:gap-2 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link href="#gioi-thieu" className="hover:text-amber-400 transition-colors">
                   Giới thiệu
@@ -153,12 +162,12 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 4: Dành cho phụ huynh (2 cols) */}
-          <div className="lg:col-span-2 space-y-2.5 sm:space-y-3">
-            <h3 className="text-xs sm:text-sm font-bold text-sky-300 uppercase tracking-wider border-b border-blue-800/80 pb-1.5 sm:pb-2">
+          {/* Col 4: Dành cho phụ huynh & Fanpage (2 cols) */}
+          <div className="lg:col-span-2 space-y-3.5">
+            <h3 className="text-xs sm:text-sm font-bold text-sky-400 uppercase tracking-wider border-b border-slate-800 pb-2">
               DÀNH CHO PHỤ HUYNH
             </h3>
-            <ul className="grid grid-cols-2 sm:grid-cols-1 gap-1.5 sm:gap-2 text-xs text-slate-300">
+            <ul className="space-y-2 text-xs sm:text-sm text-slate-300">
               <li>
                 <Link href="#thu-tuc" className="hover:text-amber-400 transition-colors">
                   Hướng dẫn thủ tục
@@ -185,47 +194,47 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
 
-          {/* Col 5: Fanpage Widget Mockup (2 cols) */}
-          <div className="sm:col-span-2 lg:col-span-2 space-y-2.5 sm:space-y-3">
-            <h3 className="text-xs sm:text-sm font-bold text-sky-300 uppercase tracking-wider border-b border-blue-800/80 pb-1.5 sm:pb-2">
-              FANPAGE
-            </h3>
-            <div className="rounded-xl bg-slate-900/80 border border-blue-800/60 p-3 space-y-2.5">
-              <div className="flex items-center gap-2">
-                <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white bg-white shrink-0">
-                  <Image
-                    src="/brand/logo.jpeg"
-                    alt="Avatar Fanpage"
-                    fill
-                    sizes="32px"
-                    className="object-contain"
-                  />
-                </div>
-                <div className="min-w-0">
-                  <div className="text-[11px] font-bold text-white truncate">
-                    TH &amp; THCS Vĩnh Thực
+            {/* Fanpage Widget */}
+            <div className="pt-2">
+              <div className="rounded-2xl bg-slate-900 border border-slate-800 p-3 space-y-2.5">
+                <div className="flex items-center gap-2">
+                  <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white bg-white shrink-0">
+                    <Image
+                      src="/brand/logo.jpeg"
+                      alt="Avatar Fanpage"
+                      fill
+                      sizes="32px"
+                      className="object-contain"
+                    />
                   </div>
-                  <div className="text-[10px] text-slate-400">2,2K người theo dõi</div>
+                  <div className="min-w-0">
+                    <div className="text-[11px] font-bold text-white truncate">
+                      TH &amp; THCS Vĩnh Thực
+                    </div>
+                    <div className="text-[10px] text-slate-400">2,2K người theo dõi</div>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex gap-1.5 pt-0.5">
-                <button className="flex-1 inline-flex items-center justify-center gap-1 py-1 rounded bg-[#1877F2] text-[10px] font-semibold text-white hover:bg-blue-600 transition-colors">
-                  <ThumbsUp className="w-3 h-3" />
-                  <span>Theo dõi</span>
-                </button>
-                <button className="px-2 py-1 rounded bg-slate-800 text-[10px] font-semibold text-slate-200 hover:bg-slate-700 transition-colors">
-                  <Share2 className="w-3 h-3" />
-                </button>
+                <div className="flex gap-1.5 pt-0.5">
+                  <button className="flex-1 inline-flex items-center justify-center gap-1 py-1.5 rounded-lg bg-[#1877F2] text-[10px] font-semibold text-white hover:bg-blue-600 transition-colors">
+                    <ThumbsUp className="w-3 h-3" />
+                    <span>Theo dõi</span>
+                  </button>
+                  <button
+                    className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-[10px] font-semibold text-slate-200 hover:bg-slate-700 transition-colors"
+                    aria-label="Chia sẻ fanpage"
+                  >
+                    <Share2 className="w-3 h-3" />
+                  </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
         {/* Sub-footer */}
-        <div className="pt-4 sm:pt-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left text-[11px] sm:text-xs text-slate-400">
+        <div className="py-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center sm:text-left text-xs text-slate-400">
           <div>
             © 2026 TRƯỜNG TH &amp; THCS VĨNH THỰC. Bảo lưu mọi quyền.
           </div>

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Camera, Sparkles, ChevronRight, ExternalLink } from "lucide-react";
+import { Camera, Sparkles, ExternalLink } from "lucide-react";
 import { FEATURED_ACTIVITIES } from "@/data/mock-data";
 
 interface GalleryPhoto {
