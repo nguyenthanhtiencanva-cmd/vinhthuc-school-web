@@ -43,8 +43,9 @@ export default function NewsAndEvents() {
   }, [isPdfModalOpen]);
 
   return (
-    <section id="tin-tuc" className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 py-10 sm:py-14 md:py-18 xl:py-20">
-      {/* 1. Official Notice Card: Văn bản / Quyết định công khai */}
+    <section id="tin-tuc" className="bg-white py-14 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        {/* 1. Official Notice Card: Văn bản / Quyết định công khai */}
       <div className="mb-10 sm:mb-12">
         <div className="border-l-4 border-l-amber-500 bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200/80 hover:shadow-md transition-all group relative">
           <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 sm:gap-6">
@@ -106,14 +107,19 @@ export default function NewsAndEvents() {
         {/* Left Column (8-9 cols): Asymmetric Editorial Grid */}
         <div className="lg:col-span-8 xl:col-span-9 space-y-6">
           {/* Section Header */}
-          <div className="flex items-center justify-between border-b-2 border-slate-100 pb-3">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
-              <span className="w-2.5 h-6 bg-sky-700 rounded-full inline-block"></span>
-              <span>TIN TỨC &amp; HOẠT ĐỘNG</span>
-            </h2>
+          <div className="flex items-end justify-between border-b-2 border-slate-100 pb-3.5">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>BẢN TIN NHÀ TRƯỜNG</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
+                <span className="w-2.5 h-6 bg-sky-700 rounded-full inline-block"></span>
+                <span>TIN TỨC &amp; HOẠT ĐỘNG</span>
+              </h2>
+            </div>
             <Link
               href="#tin-tuc"
-              className="text-xs sm:text-sm font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1 transition-colors"
+              className="text-xs sm:text-sm font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1 transition-colors pb-1"
             >
               <span>Xem tất cả</span>
               <ChevronRight className="w-4 h-4" />
@@ -242,14 +248,19 @@ export default function NewsAndEvents() {
 
         {/* Right Column (4-3 cols): Lịch Sự kiện trang trọng */}
         <div className="lg:col-span-4 xl:col-span-3 space-y-6">
-          <div className="flex items-center justify-between border-b-2 border-slate-100 pb-3">
-            <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5 whitespace-nowrap">
-              <span className="w-2.5 h-6 bg-amber-500 rounded-full inline-block"></span>
-              <span>SỰ KIỆN SẮP TỚI</span>
-            </h2>
+          <div className="flex items-end justify-between border-b-2 border-slate-100 pb-3.5">
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-100 text-amber-700 text-xs font-bold uppercase tracking-wider mb-2">
+                <span>LỊCH CÔNG TÁC</span>
+              </div>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5 whitespace-nowrap">
+                <span className="w-2.5 h-6 bg-amber-500 rounded-full inline-block"></span>
+                <span>SỰ KIỆN SẮP TỚI</span>
+              </h2>
+            </div>
             <Link
               href="#su-kien"
-              className="text-xs sm:text-sm font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1 transition-colors"
+              className="text-xs sm:text-sm font-semibold text-sky-700 hover:text-sky-900 flex items-center gap-1 transition-colors pb-1"
             >
               <ChevronRight className="w-4 h-4" />
             </Link>
@@ -289,6 +300,7 @@ export default function NewsAndEvents() {
             ))}
           </div>
         </div>
+      </div>
       </div>
 
       {/* Inline PDF Preview Modal */}

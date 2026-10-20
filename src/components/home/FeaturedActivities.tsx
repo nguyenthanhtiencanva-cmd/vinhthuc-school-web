@@ -171,19 +171,20 @@ export default function FeaturedActivities() {
   }, [activeLightboxIndex, filteredPhotos.length]);
 
   return (
-    <section id="thu-vien" className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 py-10 sm:py-14 md:py-18 xl:py-20 border-t border-slate-200/60">
-      {/* Section Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 pb-4 mb-6 sm:mb-8 gap-4">
-        <div>
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-50 text-sky-700 text-xs font-bold uppercase tracking-wider mb-2">
-            <Camera className="w-3.5 h-3.5" />
-            <span>THƯ VIỆN HÌNH ẢNH HOẠT ĐỘNG</span>
+    <section id="thu-vien" className="bg-white py-14 sm:py-18 md:py-24">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        {/* Section Header */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 pb-4 mb-8 sm:mb-10 gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-3">
+              <Camera className="w-3.5 h-3.5" />
+              <span>THƯ VIỆN HÌNH ẢNH HOẠT ĐỘNG</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
+              <span className="w-2.5 h-6 bg-sky-700 rounded-full inline-block"></span>
+              <span>HÌNH ẢNH HOẠT ĐỘNG &amp; TỔNG KẾT NHÀ TRƯỜNG</span>
+            </h2>
           </div>
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
-            <span className="w-2.5 h-6 bg-sky-700 rounded-full inline-block"></span>
-            <span>HÌNH ẢNH HOẠT ĐỘNG &amp; TỔNG KẾT NHÀ TRƯỜNG</span>
-          </h2>
-        </div>
 
         {/* Filter Tabs */}
         <div className="flex items-center gap-1.5 sm:gap-2 flex-wrap">
@@ -313,6 +314,7 @@ export default function FeaturedActivities() {
             </div>
           ))}
         </div>
+      </div>
       </div>
 
       {/* Interactive Lightbox Modal */}
