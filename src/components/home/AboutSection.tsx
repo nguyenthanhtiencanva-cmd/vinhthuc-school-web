@@ -28,7 +28,7 @@ export default function AboutSection() {
       {/* Background radial glow */}
       <div className="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-sky-600/10 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 relative z-10">
+      <div className="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-sky-500/15 border border-sky-400/30 text-sky-300 text-xs font-bold uppercase tracking-wider mb-3 backdrop-blur-md">
@@ -76,7 +76,7 @@ export default function AboutSection() {
             <div className="pt-6 mt-6 border-t border-white/10 flex flex-col sm:flex-row gap-3 sm:gap-4">
               <Link
                 href="#gioi-thieu"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-sky-600/30 transition-all hover:-translate-y-0.5 active:translate-y-0 text-center"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl bg-sky-600 hover:bg-sky-500 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase shadow-lg shadow-sky-600/30 transition-all lg:hover:-translate-y-1 active:translate-y-0 text-center"
               >
                 <span>TÌM HIỂU THÊM VỀ NHÀ TRƯỜNG</span>
                 <ArrowRight className="w-4 h-4 shrink-0" />
@@ -85,7 +85,7 @@ export default function AboutSection() {
                 href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl border border-white/20 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all hover:-translate-y-0.5 active:translate-y-0 text-center shadow-2xs backdrop-blur-xs"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-2xl border border-white/20 bg-white/10 hover:bg-white/20 text-white font-semibold text-xs sm:text-sm tracking-wider uppercase transition-all lg:hover:-translate-y-1 active:translate-y-0 text-center shadow-2xs backdrop-blur-xs"
               >
                 <span>XEM QUYẾT ĐỊNH 220/QĐ-UBND</span>
                 <ArrowRight className="w-4 h-4 shrink-0 text-sky-400" />
@@ -132,24 +132,26 @@ export default function AboutSection() {
           </div>
 
           {/* Bento Cards 3, 4, 5, 6: Khối 4 Thẻ Số liệu thống kê (Stats Grid) */}
-          {SCHOOL_STATS.map((stat, idx) => (
-            <div
-              key={idx}
-              className="col-span-1 md:col-span-1 lg:col-span-3 bg-slate-900/70 backdrop-blur-md rounded-2xl p-6 border border-white/10 shadow-lg hover:border-amber-400/50 hover:bg-slate-900/90 transition-all flex flex-col justify-between group hover:-translate-y-1"
-            >
-              <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all">
-                {getStatIcon(stat.iconName)}
-              </div>
-              <div>
-                <div className="text-3xl lg:text-4xl font-extrabold text-amber-400 tracking-tight leading-none group-hover:text-amber-300 transition-colors">
-                  {stat.value}
+          <div className="col-span-1 md:col-span-2 lg:col-span-12 grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+            {SCHOOL_STATS.map((stat, idx) => (
+              <div
+                key={idx}
+                className="bg-slate-900/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg hover:border-amber-400/50 hover:bg-slate-900/90 transition-all flex flex-col justify-between group lg:hover:-translate-y-1"
+              >
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all">
+                  {getStatIcon(stat.iconName)}
                 </div>
-                <div className="text-sm font-medium text-slate-300 mt-2 leading-snug">
-                  {stat.label}
+                <div>
+                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-400 tracking-tight leading-none group-hover:text-amber-300 transition-colors">
+                    {stat.value}
+                  </div>
+                  <div className="text-xs sm:text-sm font-medium text-slate-300 mt-2 leading-snug">
+                    {stat.label}
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

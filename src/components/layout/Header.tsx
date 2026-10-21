@@ -131,31 +131,31 @@ export default function Header() {
       </div>
 
       {/* Main Header / Navigation */}
-      <div className="max-w-[1440px] mx-auto px-3 sm:px-6 lg:px-8 2xl:px-10">
-        <div className="flex items-center justify-between h-18 sm:h-20 xl:h-[84px] gap-4">
+      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+        <div className="flex items-center justify-between h-16 sm:h-18 md:h-20 xl:h-[84px] gap-3 sm:gap-4">
           {/* Logo & School Name */}
           <Link
             href="/"
-            className="flex items-center gap-3 sm:gap-3.5 group min-w-0 xl:w-[320px] 2xl:w-[360px] shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 max-w-[72vw] xs:max-w-[76vw] sm:max-w-none xl:w-[320px] 2xl:w-[360px] shrink-0"
           >
-            <div className="relative w-12 h-12 sm:w-14 sm:h-14 rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-1 shadow-sm group-hover:shadow-md group-hover:scale-105 transition-all shrink-0">
+            <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-1 shadow-xs group-hover:shadow-md group-hover:scale-105 transition-all shrink-0">
               <Image
                 src="/brand/logo.jpeg"
                 alt="Logo Trường TH & THCS Vĩnh Thực"
                 fill
-                sizes="(max-width: 640px) 48px, 56px"
+                sizes="(max-width: 640px) 40px, 56px"
                 className="object-contain"
                 priority
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-[10px] sm:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none truncate">
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none truncate">
                 UBND XÃ VĨNH THỰC
               </span>
-              <span className="text-xs sm:text-base xl:text-lg font-extrabold tracking-tight text-slate-900 mt-1 leading-tight truncate group-hover:text-sky-700 transition-colors">
+              <span className="text-sm sm:text-base xl:text-lg font-bold sm:font-extrabold tracking-tight text-slate-900 mt-0.5 sm:mt-1 leading-tight line-clamp-1 group-hover:text-sky-700 transition-colors">
                 TRƯỜNG TH &amp; THCS VĨNH THỰC
               </span>
-              <span className="text-[10px] sm:text-[11px] font-medium text-amber-600 italic leading-none mt-1 truncate hidden xs:block">
+              <span className="text-[10px] sm:text-[11px] font-medium text-amber-600 italic leading-none mt-1 truncate hidden sm:block">
                 Soi đường tri thức – Vững bước tương lai
               </span>
             </div>
@@ -217,7 +217,7 @@ export default function Header() {
           <div className="flex items-center gap-2 xl:w-12 xl:justify-end shrink-0">
             <button
               onClick={() => setSearchOpen(!searchOpen)}
-              className="p-2.5 rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-700 hover:text-sky-700 border border-slate-200/60 transition-all shadow-2xs focus:outline-none"
+              className="w-11 h-11 flex items-center justify-center rounded-xl bg-slate-100 hover:bg-sky-50 text-slate-700 hover:text-sky-700 border border-slate-200/60 transition-all shadow-2xs focus:outline-none shrink-0 cursor-pointer"
               title="Tìm kiếm"
               aria-label="Tìm kiếm"
             >
@@ -227,13 +227,13 @@ export default function Header() {
             {/* Mobile Hamburger Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="xl:hidden p-2.5 rounded-xl text-slate-700 hover:text-sky-700 hover:bg-slate-100 transition-colors focus:outline-none"
+              className="xl:hidden w-11 h-11 flex items-center justify-center rounded-xl text-slate-700 hover:text-sky-700 bg-slate-100/80 hover:bg-slate-100 border border-slate-200/60 transition-colors focus:outline-none shrink-0 cursor-pointer"
               aria-label="Mở menu"
             >
               {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5 sm:w-6 sm:h-6" />
               ) : (
-                <Menu className="w-6 h-6" />
+                <Menu className="w-5 h-5 sm:w-6 sm:h-6" />
               )}
             </button>
           </div>
@@ -302,14 +302,14 @@ export default function Header() {
                     <Link
                       href={item.href}
                       onClick={() => !hasChildren && setMobileMenuOpen(false)}
-                      className="flex-1 py-2.5 px-3 rounded-xl text-sm font-bold text-slate-800 hover:bg-sky-50 hover:text-sky-700"
+                      className="flex-1 min-h-[44px] flex items-center py-2.5 px-3.5 rounded-xl text-sm font-bold text-slate-800 hover:bg-sky-50 hover:text-sky-700 transition-colors"
                     >
                       {item.name}
                     </Link>
                     {hasChildren && (
                       <button
                         onClick={() => toggleMobileSubmenu(item.name)}
-                        className="p-2 rounded-xl text-slate-500 hover:bg-slate-100 transition-transform"
+                        className="w-11 h-11 flex items-center justify-center rounded-xl text-slate-500 hover:bg-slate-100 transition-transform shrink-0 cursor-pointer"
                         aria-label={`Mở mục ${item.name}`}
                       >
                         <ChevronDown
@@ -322,7 +322,7 @@ export default function Header() {
                   </div>
 
                   {hasChildren && isExpanded && (
-                    <div className="pl-4 pr-2 py-1.5 space-y-1 bg-slate-50/80 rounded-xl my-1 border border-slate-100">
+                    <div className="pl-3 pr-2 py-1.5 space-y-1 bg-slate-50/80 rounded-xl my-1 border border-slate-100">
                       {item.children?.map((sub) => {
                         const isExternal = sub.href.startsWith("http");
                         return (
@@ -332,7 +332,7 @@ export default function Header() {
                             onClick={() => setMobileMenuOpen(false)}
                             target={isExternal ? "_blank" : undefined}
                             rel={isExternal ? "noopener noreferrer" : undefined}
-                            className="block py-2 px-3 text-xs font-medium text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 rounded-lg transition-colors"
+                            className="block min-h-[40px] py-2 px-3 text-xs font-medium text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 rounded-lg transition-colors flex items-center"
                           >
                             {sub.name}
                           </Link>

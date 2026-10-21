@@ -13,7 +13,7 @@ import {
 export default function Footer() {
   return (
     <footer id="lien-he" className="bg-slate-950 text-slate-300 border-t border-slate-800">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+      <div className="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-10 py-12 sm:py-14 border-b border-slate-800/80">
           {/* Col 1: Brand & Logo (5 cols) */}

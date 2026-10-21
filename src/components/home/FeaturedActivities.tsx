@@ -171,16 +171,16 @@ export default function FeaturedActivities() {
   }, [activeLightboxIndex, filteredPhotos.length]);
 
   return (
-    <section id="thu-vien" className="bg-white py-14 sm:py-18 md:py-24">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+    <section id="thu-vien" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 pb-4 mb-8 sm:mb-10 gap-4">
+        <div className="flex flex-col md:flex-row md:items-end justify-between border-b-2 border-slate-100 pb-4 mb-6 sm:mb-8 lg:mb-10 gap-4">
           <div>
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-sky-50 border border-sky-100 text-sky-700 text-xs font-bold uppercase tracking-wider mb-3">
               <Camera className="w-3.5 h-3.5" />
               <span>THƯ VIỆN HÌNH ẢNH HOẠT ĐỘNG</span>
             </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold text-slate-900 tracking-tight uppercase flex items-center gap-2.5">
               <span className="w-2.5 h-6 bg-sky-700 rounded-full inline-block"></span>
               <span>HÌNH ẢNH HOẠT ĐỘNG &amp; TỔNG KẾT NHÀ TRƯỜNG</span>
             </h2>
@@ -193,7 +193,7 @@ export default function FeaturedActivities() {
               setActiveTab("all");
               setActiveLightboxIndex(null);
             }}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all min-h-[36px] flex items-center cursor-pointer ${
               activeTab === "all"
                 ? "bg-sky-700 text-white shadow-xs"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -206,7 +206,7 @@ export default function FeaturedActivities() {
               setActiveTab("tong-ket");
               setActiveLightboxIndex(null);
             }}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all min-h-[36px] flex items-center cursor-pointer ${
               activeTab === "tong-ket"
                 ? "bg-sky-700 text-white shadow-xs"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -219,7 +219,7 @@ export default function FeaturedActivities() {
               setActiveTab("he");
               setActiveLightboxIndex(null);
             }}
-            className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all ${
+            className={`px-3 sm:px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all min-h-[36px] flex items-center cursor-pointer ${
               activeTab === "he"
                 ? "bg-sky-700 text-white shadow-xs"
                 : "bg-slate-100 text-slate-600 hover:bg-slate-200"
@@ -230,57 +230,60 @@ export default function FeaturedActivities() {
         </div>
       </div>
 
-      {/* Bento Photo Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
-        {filteredPhotos.map((photo, index) => (
-          <div
-            key={photo.id}
-            onClick={() => setActiveLightboxIndex(index)}
-            className={`group relative ${photo.span || "col-span-1"} ${
-              photo.aspect || "aspect-[4/3]"
-            } rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 bg-slate-100 border border-slate-200/70 hover:-translate-y-1 cursor-pointer`}
-          >
-            <Image
-              src={photo.src}
-              alt={photo.alt}
-              fill
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 420px"
-              className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
-            />
+      {/* Bento Photo Grid: 2 cols on mobile, 4 cols on desktop */}
+      <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-2.5 sm:gap-4 lg:gap-5">
+        {filteredPhotos.map((photo, index) => {
+          const isWide = photo.span?.includes("lg:col-span-2");
+          return (
+            <div
+              key={photo.id}
+              onClick={() => setActiveLightboxIndex(index)}
+              className={`group relative ${isWide ? "col-span-2" : "col-span-1"} ${
+                photo.aspect || "aspect-[4/3]"
+              } rounded-2xl overflow-hidden shadow-xs hover:shadow-xl transition-all duration-300 bg-slate-100 border border-slate-200/70 lg:hover:-translate-y-1.5 cursor-pointer`}
+            >
+              <Image
+                src={photo.src}
+                alt={photo.alt}
+                fill
+                sizes="(max-width: 640px) 50vw, (max-width: 1024px) 50vw, 420px"
+                className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+              />
 
-            {/* Hover Zoom Icon Pill */}
-            <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
-              <span className="p-2 rounded-xl bg-slate-950/75 backdrop-blur-md text-white flex items-center gap-1 text-[11px] font-semibold border border-white/20 shadow-lg">
-                <ZoomIn className="w-3.5 h-3.5 text-amber-400" />
-                <span>Phóng to</span>
-              </span>
-            </div>
+              {/* Hover Zoom Icon Pill */}
+              <div className="absolute top-2.5 right-2.5 sm:top-3 sm:right-3 opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <span className="p-1.5 sm:p-2 rounded-xl bg-slate-950/75 backdrop-blur-md text-white flex items-center gap-1 text-[10px] sm:text-[11px] font-semibold border border-white/20 shadow-lg">
+                  <ZoomIn className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400" />
+                  <span className="hidden xs:inline">Phóng to</span>
+                </span>
+              </div>
 
-            {/* Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-4 sm:p-5 flex flex-col justify-end text-white">
-              <span className="text-[10px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider mb-1">
-                {photo.category}
-              </span>
-              <p className="text-xs sm:text-sm font-semibold text-white leading-snug line-clamp-2">
-                {photo.alt}
-              </p>
-              {photo.link && (
-                <div
-                  className="mt-2 pt-2 border-t border-white/20 flex items-center justify-between text-[11px] text-sky-200 font-medium"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <Link
-                    href={photo.link}
-                    className="inline-flex items-center gap-1 hover:text-white transition-colors"
+              {/* Gradient Overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent opacity-85 group-hover:opacity-95 transition-opacity p-3 sm:p-5 flex flex-col justify-end text-white">
+                <span className="text-[9px] sm:text-xs font-bold text-amber-400 uppercase tracking-wider mb-0.5 sm:mb-1">
+                  {photo.category}
+                </span>
+                <p className="text-[11px] sm:text-sm font-semibold text-white leading-snug line-clamp-2">
+                  {photo.alt}
+                </p>
+                {photo.link && (
+                  <div
+                    className="mt-1.5 sm:mt-2 pt-1.5 sm:pt-2 border-t border-white/20 flex items-center justify-between text-[10px] sm:text-[11px] text-sky-200 font-medium"
+                    onClick={(e) => e.stopPropagation()}
                   >
-                    <span>Xem bài viết chi tiết</span>
-                    <ExternalLink className="w-3 h-3" />
-                  </Link>
-                </div>
-              )}
+                    <Link
+                      href={photo.link}
+                      className="inline-flex items-center gap-1 hover:text-white transition-colors"
+                    >
+                      <span>Xem bài viết chi tiết</span>
+                      <ExternalLink className="w-3 h-3" />
+                    </Link>
+                  </div>
+                )}
+              </div>
             </div>
-          </div>
-        ))}
+          );
+        })}
       </div>
 
       {/* 6 Core School Themes (Standardized SVG illustrations) */}

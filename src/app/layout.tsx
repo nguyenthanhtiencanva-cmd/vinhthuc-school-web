@@ -38,9 +38,9 @@ export default function RootLayout({
       lang="vi"
       className={`${inter.variable} ${beVietnamPro.variable} scroll-smooth font-sans`}
     >
-      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-sky-600 selection:text-white">
+      <body className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-sky-600 selection:text-white overflow-x-hidden w-full relative">
         <Header />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 overflow-x-hidden">{children}</main>
         <Footer />
         <BackToTop />
       </body>

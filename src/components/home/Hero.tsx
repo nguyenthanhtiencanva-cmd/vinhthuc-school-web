@@ -21,7 +21,7 @@ export default function Hero() {
       <div className="absolute -top-32 -left-32 w-96 h-96 bg-sky-200/40 rounded-full blur-3xl pointer-events-none"></div>
       <div className="absolute top-1/2 -right-32 w-96 h-96 bg-amber-100/50 rounded-full blur-3xl pointer-events-none"></div>
 
-      <div className="relative max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10 z-10">
+      <div className="relative max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Left Column: Hero Content (7 cols) */}
           <div className="lg:col-span-7 xl:col-span-7 space-y-5 sm:space-y-6 text-center lg:text-left">
@@ -59,7 +59,7 @@ export default function Hero() {
               {/* Primary CTA */}
               <Link
                 href="#gioi-thieu"
-                className="inline-flex items-center justify-center gap-2.5 bg-sky-700 hover:bg-sky-800 text-white shadow-lg shadow-sky-700/25 rounded-2xl px-6 py-3.5 font-semibold text-sm tracking-wider uppercase transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 bg-sky-700 hover:bg-sky-800 text-white shadow-lg shadow-sky-700/25 rounded-2xl px-6 py-3.5 font-semibold text-sm tracking-wider uppercase transition-all lg:hover:-translate-y-1 active:translate-y-0"
               >
                 <Compass className="w-4 h-4 text-sky-200" />
                 <span>KHÁM PHÁ NHÀ TRƯỜNG</span>
@@ -69,7 +69,7 @@ export default function Hero() {
               {/* Secondary CTA */}
               <Link
                 href="#tin-tuc"
-                className="inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm tracking-wider uppercase border border-slate-300 shadow-sm transition-all hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto min-h-[48px] inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-2xl bg-white hover:bg-slate-50 text-slate-800 font-semibold text-sm tracking-wider uppercase border border-slate-300 shadow-sm transition-all lg:hover:-translate-y-1 active:translate-y-0"
               >
                 <Newspaper className="w-4 h-4 text-sky-700" />
                 <span>TIN TỨC MỚI NHẤT</span>

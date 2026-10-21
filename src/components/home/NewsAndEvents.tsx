@@ -43,24 +43,24 @@ export default function NewsAndEvents() {
   }, [isPdfModalOpen]);
 
   return (
-    <section id="tin-tuc" className="bg-white py-14 sm:py-16 md:py-20 lg:py-24">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
+    <section id="tin-tuc" className="bg-white py-12 sm:py-16 md:py-20 lg:py-24">
+      <div className="max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
         {/* 1. Official Notice Card: Văn bản / Quyết định công khai */}
-      <div className="mb-10 sm:mb-12">
-        <div className="border-l-4 border-l-amber-500 bg-white rounded-2xl p-6 sm:p-7 shadow-sm border border-slate-200/80 hover:shadow-md transition-all group relative">
-          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-5 sm:gap-6">
+      <div className="mb-8 sm:mb-10 lg:mb-12">
+        <div className="border-l-4 border-l-amber-500 bg-white rounded-2xl p-4 sm:p-6 lg:p-7 shadow-sm border border-slate-200/80 hover:shadow-md transition-all group relative">
+          <div className="flex flex-col lg:flex-row items-start lg:items-center justify-between gap-4 sm:gap-6">
             {/* Left: Document Icon Badge */}
-            <div className="flex items-center gap-4 shrink-0">
-              <div className="relative w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-white flex flex-col items-center justify-center shadow-lg shadow-red-500/20 group-hover:scale-105 transition-transform">
-                <FileText className="w-6 h-6 sm:w-7 sm:h-7" />
-                <span className="text-[9px] font-black tracking-wider uppercase mt-0.5">PDF</span>
+            <div className="flex items-center gap-3.5 sm:gap-4 shrink-0">
+              <div className="relative w-12 h-12 sm:w-16 sm:h-16 rounded-2xl bg-gradient-to-br from-red-500 to-rose-600 text-white flex flex-col items-center justify-center shadow-lg shadow-red-500/20 group-hover:scale-105 transition-transform shrink-0">
+                <FileText className="w-5 h-5 sm:w-7 sm:h-7" />
+                <span className="text-[8px] sm:text-[9px] font-black tracking-wider uppercase mt-0.5">PDF</span>
               </div>
-              <div>
-                <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-50 text-red-700 text-[10px] sm:text-xs font-bold uppercase tracking-wider mb-1 border border-red-100">
-                  <ShieldCheck className="w-3.5 h-3.5 text-red-600" />
-                  <span>VĂN BẢN QUẢN LÝ NHÀ NƯỚC • PDF CHÍNH THỨC</span>
+              <div className="min-w-0">
+                <div className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-red-50 text-red-700 text-[9px] sm:text-xs font-bold uppercase tracking-wider mb-1 border border-red-100">
+                  <ShieldCheck className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-red-600 shrink-0" />
+                  <span className="truncate">VĂN BẢN QUẢN LÝ NHÀ NƯỚC • PDF CHÍNH THỨC</span>
                 </div>
-                <div className="text-xs sm:text-sm font-semibold text-slate-500">
+                <div className="text-[11px] sm:text-sm font-semibold text-slate-500 truncate sm:whitespace-normal">
                   Số hiệu: 220/QĐ-UBND • Ngày ban hành: 15/10/2025 • Cơ quan: UBND xã Vĩnh Thực
                 </div>
               </div>
@@ -68,7 +68,7 @@ export default function NewsAndEvents() {
 
             {/* Middle: Document Title & Details */}
             <div className="flex-1 min-w-0 space-y-1">
-              <h3 className="text-base sm:text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug">
+              <h3 className="text-sm sm:text-base lg:text-lg font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug">
                 Quyết định số 220/QĐ-UBND của Ủy ban nhân dân xã Vĩnh Thực
               </h3>
               <p className="text-xs sm:text-sm text-slate-600 line-clamp-2 leading-relaxed">
@@ -81,7 +81,7 @@ export default function NewsAndEvents() {
               <button
                 type="button"
                 onClick={() => setIsPdfModalOpen(true)}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-sky-700/25 transition-all hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-sky-700 hover:bg-sky-800 text-white font-semibold text-xs sm:text-sm tracking-wide shadow-md shadow-sky-700/25 transition-all lg:hover:-translate-y-0.5 active:translate-y-0 cursor-pointer"
               >
                 <Eye className="w-4 h-4 text-sky-200" />
                 <span>Đọc văn bản trực tiếp</span>
@@ -91,7 +91,7 @@ export default function NewsAndEvents() {
                 href="/documents/quyet-dinh-220-sap-nhap-truong-th-thcs-vinh-thuc.pdf"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm tracking-wide transition-all shadow-2xs hover:-translate-y-0.5 active:translate-y-0"
+                className="w-full sm:w-auto min-h-[44px] inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl border border-slate-300 hover:bg-slate-50 text-slate-700 font-semibold text-xs sm:text-sm tracking-wide transition-all shadow-2xs lg:hover:-translate-y-0.5 active:translate-y-0"
                 title="Mở tab mới hoặc tải về máy"
               >
                 <Download className="w-4 h-4 text-sky-700" />
@@ -129,7 +129,7 @@ export default function NewsAndEvents() {
           {/* Editorial Grid: 1 Big Featured + Secondary Cards */}
           <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
             {/* Big Featured Article (7 cols) */}
-            <div className="md:col-span-7 flex flex-col group bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+            <div className="md:col-span-7 flex flex-col group bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl lg:hover:-translate-y-1.5 transition-all duration-300">
               <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
                 <Image
                   src={FEATURED_NEWS.image}
@@ -184,7 +184,7 @@ export default function NewsAndEvents() {
                 return (
                   <div
                     key={item.id}
-                    className="group bg-white rounded-2xl border border-slate-200/80 p-3 sm:p-3.5 shadow-xs hover:shadow-lg hover:-translate-y-0.5 transition-all duration-300 flex gap-3.5 items-stretch"
+                    className="group bg-white rounded-2xl border border-slate-200/80 p-3 sm:p-3.5 shadow-xs hover:shadow-lg lg:hover:-translate-y-1 transition-all duration-300 flex gap-3.5 items-stretch"
                   >
                     <div
                       className={`relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 ${
@@ -270,7 +270,7 @@ export default function NewsAndEvents() {
             {UPCOMING_EVENTS.map((evt) => (
               <div
                 key={evt.id}
-                className="group bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-4.5 shadow-xs hover:shadow-lg hover:border-amber-200 hover:-translate-y-0.5 transition-all duration-300 flex items-stretch gap-3.5"
+                className="group bg-white rounded-2xl border border-slate-200/80 p-4 sm:p-4.5 shadow-xs hover:shadow-lg hover:border-amber-200 lg:hover:-translate-y-1 transition-all duration-300 flex items-stretch gap-3.5"
               >
                 {/* Date block */}
                 <div className="w-16 rounded-xl bg-gradient-to-b from-sky-50 to-blue-50/80 border border-sky-100 flex flex-col items-center justify-center p-2 text-center shrink-0 group-hover:border-amber-300 transition-colors">

@@ -50,15 +50,15 @@ export default function QuickCards() {
   };
 
   return (
-    <section className="relative z-20 -mt-8 sm:-mt-12 md:-mt-14 max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 2xl:px-10">
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
+    <section className="relative z-20 -mt-8 sm:-mt-12 md:-mt-14 max-w-7xl xl:max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6">
         {QUICK_CARDS.map((card) => (
           <Link
             key={card.id}
             href={card.href}
             className={`${getCardStyle(
               card.id
-            )} rounded-2xl p-4 sm:p-6 min-h-[160px] sm:min-h-[180px] shadow-sm hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1.5 flex flex-col justify-between border group backdrop-blur-xs`}
+            )} rounded-2xl p-3.5 sm:p-5 lg:p-6 min-h-[145px] sm:min-h-[165px] lg:min-h-[180px] shadow-sm hover:shadow-xl transition-all duration-300 transform lg:hover:-translate-y-1.5 active:scale-[0.98] flex flex-col justify-between border group backdrop-blur-xs`}
           >
             <div className="flex items-start justify-between gap-2">
               <div className="p-2.5 sm:p-3 bg-white/90 backdrop-blur-xs rounded-xl shadow-2xs group-hover:scale-105 group-hover:bg-white transition-all">
