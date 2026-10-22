@@ -217,7 +217,7 @@ export default function NewsAndEvents() {
                           </span>
                         </div>
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug line-clamp-2">
-                          {item.slug.startsWith("tong-ket") ? (
+                          {item.slug.startsWith("tong-ket") || item.slug.startsWith("cong-khai") ? (
                             <Link href={`/tin-tuc/${item.slug}`}>{item.title}</Link>
                           ) : (
                             <Link href={`#tin-tuc/${item.slug}`}>{item.title}</Link>
@@ -226,7 +226,7 @@ export default function NewsAndEvents() {
                       </div>
 
                       <div className="pt-1">
-                        {item.slug.startsWith("tong-ket") ? (
+                        {item.slug.startsWith("tong-ket") || item.slug.startsWith("cong-khai") ? (
                           <Link
                             href={`/tin-tuc/${item.slug}`}
                             className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-700 hover:text-sky-900"

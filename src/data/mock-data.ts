@@ -29,7 +29,7 @@ export const QUICK_CARDS: QuickCardItem[] = [
     bgColor: "bg-[#EEFAF2]",
     iconColor: "text-[#10B981]",
     arrowColor: "bg-[#10B981] text-white",
-    href: "#cong-khai",
+    href: "/tin-tuc/cong-khai-quyet-toan-thu-chi-ngan-sach-quy-1-nam-2026",
   },
   {
     id: "card-4",
@@ -56,6 +56,14 @@ export const FEATURED_NEWS: NewsItem = {
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-cong-khai-thu-chi-quy-1-2026",
+    title: "Công khai quyết toán thu – chi ngân sách nhà nước Quý I năm 2026 theo Quyết định số 29/QĐ-TH&THCS",
+    category: "CÔNG KHAI NGÂN SÁCH",
+    date: "06/04/2026",
+    image: "/images/quyet-dinh-29-cover.jpg",
+    slug: "cong-khai-quyet-toan-thu-chi-ngan-sach-quy-1-nam-2026",
+  },
   {
     id: "news-tong-ket-2025-2026",
     title: "Tổng kết năm học 2025–2026 – Nhìn lại dấu ấn, mở ra những nhiệm vụ mới",
