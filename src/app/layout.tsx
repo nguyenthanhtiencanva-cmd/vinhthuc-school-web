@@ -20,11 +20,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://ththcsvinhthuc.edu.vn"),
   title: "TRƯỜNG TH & THCS VĨNH THỰC - Soi đường tri thức – Vững bước tương lai",
   description:
-    "Cổng thông tin điện tử Trường Tiểu học và Trung học cơ sở Vĩnh Thực, trực thuộc UBND xã Vĩnh Thực, Thành phố Quảng Ninh.",
+    "Cổng thông tin điện tử chính thức Trường Tiểu học và Trung học cơ sở Vĩnh Thực, trực thuộc UBND xã Vĩnh Thực, Thành phố Quảng Ninh.",
   icons: {
     icon: "/brand/logo.jpeg",
+    apple: "/brand/logo.jpeg",
+  },
+  openGraph: {
+    title: "TRƯỜNG TH & THCS VĨNH THỰC - Cổng thông tin điện tử chính thức",
+    description:
+      "Soi đường tri thức – Vững bước tương lai. Trường TH & THCS Vĩnh Thực, xã Vĩnh Thực, TP. Quảng Ninh.",
+    url: "https://ththcsvinhthuc.edu.vn",
+    siteName: "Trường TH & THCS Vĩnh Thực",
+    locale: "vi_VN",
+    type: "website",
+    images: [
+      {
+        url: "/images/anh-hoc-sinh-vinh-thuc-v3.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Trường Tiểu học và Trung học cơ sở Vĩnh Thực",
+      },
+    ],
   },
 };
 
