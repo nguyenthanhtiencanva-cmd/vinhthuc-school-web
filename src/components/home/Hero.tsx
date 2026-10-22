@@ -34,7 +34,7 @@ export default function Hero() {
             </div>
 
             {/* Main Headline H1 with prominent gradient */}
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-extrabold leading-tight tracking-tight text-slate-900 uppercase">
+            <h1 className="text-[19px] xs:text-[22px] sm:text-3xl lg:text-[31px] xl:text-[38px] 2xl:text-[46px] font-extrabold leading-tight tracking-tight text-slate-900 uppercase whitespace-nowrap">
               TRƯỜNG TH &amp; THCS{" "}
               <span className="bg-gradient-to-r from-blue-800 to-sky-600 bg-clip-text text-transparent">
                 VĨNH THỰC
