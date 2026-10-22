@@ -25,8 +25,16 @@ export const metadata: Metadata = {
   description:
     "Cổng thông tin điện tử chính thức Trường Tiểu học và Trung học cơ sở Vĩnh Thực, trực thuộc UBND xã Vĩnh Thực, Thành phố Quảng Ninh.",
   icons: {
-    icon: "/brand/logo.jpeg",
-    apple: "/brand/logo.jpeg",
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/brand/logo.jpeg", type: "image/jpeg" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+      { url: "/brand/logo.jpeg" },
+    ],
   },
   openGraph: {
     title: "TRƯỜNG TH & THCS VĨNH THỰC - Cổng thông tin điện tử chính thức",
