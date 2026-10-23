@@ -29,7 +29,7 @@ export const QUICK_CARDS: QuickCardItem[] = [
     bgColor: "bg-[#EEFAF2]",
     iconColor: "text-[#10B981]",
     arrowColor: "bg-[#10B981] text-white",
-    href: "/tin-tuc/cong-khai-chi-ngan-sach-quy-2-nam-2026",
+    href: "/tin-tuc/cong-khai-chi-ngan-sach-quy-3-nam-2026",
   },
   {
     id: "card-4",
@@ -56,6 +56,14 @@ export const FEATURED_NEWS: NewsItem = {
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-cong-khai-thu-chi-quy-3-2026",
+    title: "Công khai số liệu dự toán và tình hình thực chi ngân sách nhà nước Quý III năm 2026",
+    category: "CÔNG KHAI NGÂN SÁCH",
+    date: "31/08/2026",
+    image: "/images/cong-khai-quy-3-cover.jpg",
+    slug: "cong-khai-chi-ngan-sach-quy-3-nam-2026",
+  },
   {
     id: "news-cong-khai-thu-chi-quy-2-2026",
     title: "Công khai số liệu dự toán và tình hình thực chi ngân sách nhà nước Quý II năm 2026",
