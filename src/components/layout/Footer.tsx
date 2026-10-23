@@ -98,10 +98,17 @@ export default function Footer() {
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-slate-300">
               <li className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
-                <span className="leading-relaxed">
-                  Trụ sở chính: thôn Vĩnh Thực 2, xã Vĩnh Thực, TP. Quảng Ninh
-                </span>
+                <MapPin className="w-4 h-4 text-sky-400 shrink-0 mt-1" />
+                <div className="leading-relaxed space-y-1.5">
+                  <div>
+                    <span className="text-slate-400 text-xs block">Điểm trường trung tâm:</span>
+                    <span className="text-white font-medium">Thôn Đầu Đông, xã Vĩnh Thực, TP. Quảng Ninh</span>
+                  </div>
+                  <div>
+                    <span className="text-slate-400 text-xs block">Điểm trường 2:</span>
+                    <span className="text-white font-medium">Thôn Vĩnh Trung, xã Vĩnh Thực, TP. Quảng Ninh</span>
+                  </div>
+                </div>
               </li>
               <li className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 shrink-0" />

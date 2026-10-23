@@ -148,12 +148,12 @@ export const SCHOOL_STATS: StatItem[] = [
   },
   {
     value: "01",
-    label: "Trụ sở chính tại thôn Vĩnh Thực 2",
+    label: "Điểm trường trung tâm: Thôn Đầu Đông",
     iconName: "graduation-cap",
   },
   {
     value: "01",
-    label: "Điểm trường tại thôn Vĩnh Trung 2",
+    label: "Điểm trường 2: Thôn Vĩnh Trung",
     iconName: "trophy",
   },
 ];
