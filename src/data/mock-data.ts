@@ -57,6 +57,14 @@ export const FEATURED_NEWS: NewsItem = {
 
 export const RECENT_NEWS: NewsItem[] = [
   {
+    id: "news-stem-khtn7-nha-cach-am",
+    title: "Sôi nổi tiết học STEM Khoa học tự nhiên 7: Chế tạo mô hình nhà cách âm",
+    category: "CHUYÊN MÔN & STEM",
+    date: "23/10/2026",
+    image: "/images/stem-khtn7-nha-cach-am-1.jpg",
+    slug: "tiet-hoc-stem-khoa-hoc-tu-nhien-7-mo-hinh-nha-cach-am",
+  },
+  {
     id: "news-cong-khai-thu-chi-quy-3-2026",
     title: "Công khai số liệu dự toán và tình hình thực chi ngân sách nhà nước Quý III năm 2026",
     category: "CÔNG KHAI NGÂN SÁCH",
