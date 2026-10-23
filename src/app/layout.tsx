@@ -55,6 +55,27 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Trường Tiểu học và Trung học cơ sở Vĩnh Thực",
+  alternateName: ["Trường TH & THCS Vĩnh Thực", "Trường TH&THCS Vĩnh Thực"],
+  url: "https://ththcsvinhthuc.edu.vn",
+  logo: "https://ththcsvinhthuc.edu.vn/brand/logo.jpeg",
+  image: "https://ththcsvinhthuc.edu.vn/images/anh-hoc-sinh-vinh-thuc-v3.jpg",
+  description:
+    "Cổng thông tin điện tử chính thức Trường Tiểu học và Trung học cơ sở Vĩnh Thực, trực thuộc UBND xã Vĩnh Thực, Thành phố Quảng Ninh.",
+  telephone: "0903280488",
+  email: "c12vinhthuc.vinhthuc@quangninh.edu.vn",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Thôn Đầu Đông",
+    addressLocality: "Xã Vĩnh Thực",
+    addressRegion: "Quảng Ninh",
+    addressCountry: "VN",
+  },
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -65,6 +86,12 @@ export default function RootLayout({
       lang="vi"
       className={`${inter.variable} ${beVietnamPro.variable} scroll-smooth font-sans`}
     >
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
+      </head>
       <body className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased selection:bg-sky-600 selection:text-white overflow-x-hidden w-full relative">
         <Header />
         <main className="flex-1 overflow-x-hidden">{children}</main>
