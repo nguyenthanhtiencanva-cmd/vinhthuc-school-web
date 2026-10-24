@@ -1,25 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowRight, Award, Users, GraduationCap, Trophy, Sparkles } from "lucide-react";
-import { SCHOOL_STATS } from "@/data/mock-data";
+import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function AboutSection() {
-  const getStatIcon = (iconName: string) => {
-    switch (iconName) {
-      case "award":
-        return <Award className="w-6 h-6 text-sky-400" />;
-      case "users":
-        return <Users className="w-6 h-6 text-sky-400" />;
-      case "graduation-cap":
-        return <GraduationCap className="w-6 h-6 text-sky-400" />;
-      case "trophy":
-        return <Trophy className="w-6 h-6 text-amber-400" />;
-      default:
-        return <Award className="w-6 h-6 text-sky-400" />;
-    }
-  };
-
   return (
     <section
       id="gioi-thieu"
@@ -129,28 +113,6 @@ export default function AboutSection() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent"></div>
             </div>
-          </div>
-
-          {/* Bento Cards 3, 4, 5, 6: Khối 4 Thẻ Số liệu thống kê (Stats Grid) */}
-          <div className="col-span-1 md:col-span-2 lg:col-span-12 grid grid-cols-2 lg:grid-cols-4 gap-3.5 sm:gap-6">
-            {SCHOOL_STATS.map((stat, idx) => (
-              <div
-                key={idx}
-                className="bg-slate-900/70 backdrop-blur-md rounded-2xl p-4 sm:p-6 border border-white/10 shadow-lg hover:border-amber-400/50 hover:bg-slate-900/90 transition-all flex flex-col justify-between group lg:hover:-translate-y-1"
-              >
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white/10 border border-white/10 flex items-center justify-center mb-3 sm:mb-4 group-hover:scale-110 group-hover:bg-white/15 transition-all">
-                  {getStatIcon(stat.iconName)}
-                </div>
-                <div>
-                  <div className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-amber-400 tracking-tight leading-none group-hover:text-amber-300 transition-colors">
-                    {stat.value}
-                  </div>
-                  <div className="text-xs sm:text-sm font-medium text-slate-300 mt-2 leading-snug">
-                    {stat.label}
-                  </div>
-                </div>
-              </div>
-            ))}
           </div>
         </div>
       </div>
