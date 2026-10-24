@@ -181,30 +181,57 @@ export default function NewsAndEvents() {
             <div className="md:col-span-5 flex flex-col space-y-4">
               {RECENT_NEWS.map((item) => {
                 const isSvg = item.image.endsWith(".svg");
+                const hasDetailPage =
+                  item.slug.startsWith("tiet-hoc") ||
+                  item.slug.startsWith("tong-ket") ||
+                  item.slug.startsWith("cong-khai");
                 return (
                   <div
                     key={item.id}
                     className="group bg-white rounded-2xl border border-slate-200/80 p-3 sm:p-3.5 shadow-xs hover:shadow-lg lg:hover:-translate-y-1 transition-all duration-300 flex gap-3.5 items-stretch"
                   >
-                    <div
-                      className={`relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 ${
-                        isSvg
-                          ? "bg-gradient-to-br from-slate-50 via-sky-50/50 to-blue-50/40 ring-1 ring-inset ring-slate-900/5 p-2 flex items-center justify-center"
-                          : "bg-slate-100"
-                      }`}
-                    >
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        fill
-                        sizes="96px"
-                        className={
+                    {hasDetailPage ? (
+                      <Link
+                        href={`/tin-tuc/${item.slug}`}
+                        className={`block relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 ${
                           isSvg
-                            ? "object-contain p-1 group-hover:scale-105 transition-transform duration-500"
-                            : "object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
-                        }
-                      />
-                    </div>
+                            ? "bg-gradient-to-br from-slate-50 via-sky-50/50 to-blue-50/40 ring-1 ring-inset ring-slate-900/5 p-2 flex items-center justify-center"
+                            : "bg-slate-100"
+                        }`}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          sizes="96px"
+                          className={
+                            isSvg
+                              ? "object-contain p-1 group-hover:scale-105 transition-transform duration-500"
+                              : "object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                          }
+                        />
+                      </Link>
+                    ) : (
+                      <div
+                        className={`relative w-20 sm:w-24 aspect-square rounded-xl overflow-hidden shrink-0 ${
+                          isSvg
+                            ? "bg-gradient-to-br from-slate-50 via-sky-50/50 to-blue-50/40 ring-1 ring-inset ring-slate-900/5 p-2 flex items-center justify-center"
+                            : "bg-slate-100"
+                        }`}
+                      >
+                        <Image
+                          src={item.image}
+                          alt={item.title}
+                          fill
+                          sizes="96px"
+                          className={
+                            isSvg
+                              ? "object-contain p-1 group-hover:scale-105 transition-transform duration-500"
+                              : "object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                          }
+                        />
+                      </div>
+                    )}
 
                     <div className="flex-1 min-w-0 flex flex-col justify-between py-0.5">
                       <div>
@@ -217,7 +244,7 @@ export default function NewsAndEvents() {
                           </span>
                         </div>
                         <h4 className="text-xs sm:text-sm font-bold text-slate-900 group-hover:text-sky-700 transition-colors leading-snug line-clamp-2">
-                          {item.slug.startsWith("tong-ket") || item.slug.startsWith("cong-khai") ? (
+                          {hasDetailPage ? (
                             <Link href={`/tin-tuc/${item.slug}`}>{item.title}</Link>
                           ) : (
                             <Link href={`#tin-tuc/${item.slug}`}>{item.title}</Link>
@@ -226,12 +253,12 @@ export default function NewsAndEvents() {
                       </div>
 
                       <div className="pt-1">
-                        {item.slug.startsWith("tong-ket") || item.slug.startsWith("cong-khai") ? (
+                        {hasDetailPage ? (
                           <Link
                             href={`/tin-tuc/${item.slug}`}
                             className="inline-flex items-center gap-1 text-[11px] font-semibold text-sky-700 hover:text-sky-900"
                           >
-                            <span>Xem bài viết</span>
+                            <span>Xem chi tiết</span>
                             <ChevronRight className="w-3 h-3" />
                           </Link>
                         ) : (

@@ -44,14 +44,14 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-tong-ket-hoat-dong-he-2026",
-  title: "Hội nghị tổng kết các hoạt động quản lý, giáo dục thanh thiếu nhi, học sinh hè năm 2026",
-  category: "HOẠT ĐỘNG HÈ",
-  date: "04/09/2026",
+  id: "news-stem-khtn7-nha-cach-am",
+  title: "Sôi nổi tiết học STEM Khoa học tự nhiên 7: Chế tạo mô hình nhà cách âm",
+  category: "CHUYÊN MÔN & STEM",
+  date: "23/10/2026",
   summary:
-    "Ban Chỉ đạo hoạt động hè xã Vĩnh Thực tổng kết công tác quản lý, chăm sóc và giáo dục thanh thiếu nhi, học sinh hè năm 2026.",
-  image: "/images/tong-ket-hoat-dong-he-2026.jpg",
-  slug: "tong-ket-hoat-dong-quan-ly-giao-duc-thanh-thieu-nhi-he-2026",
+    "Học sinh khối 7 Trường TH&THCS Vĩnh Thực biến kiến thức sóng âm và phản xạ âm thanh thành những mô hình nhà cách âm độc đáo, sáng tạo từ vật liệu tái chế.",
+  image: "/images/stem-khtn7-nha-cach-am-1.jpg",
+  slug: "tiet-hoc-stem-khoa-hoc-tu-nhien-7-mo-hinh-nha-cach-am",
   featured: true,
 };
 
@@ -63,6 +63,16 @@ export const RECENT_NEWS: NewsItem[] = [
     date: "23/10/2026",
     image: "/images/stem-khtn7-nha-cach-am-1.jpg",
     slug: "tiet-hoc-stem-khoa-hoc-tu-nhien-7-mo-hinh-nha-cach-am",
+  },
+  {
+    id: "news-tong-ket-hoat-dong-he-2026",
+    title: "Hội nghị tổng kết các hoạt động quản lý, giáo dục thanh thiếu nhi, học sinh hè năm 2026",
+    category: "HOẠT ĐỘNG HÈ",
+    date: "04/09/2026",
+    summary:
+      "Ban Chỉ đạo hoạt động hè xã Vĩnh Thực tổng kết công tác quản lý, chăm sóc và giáo dục thanh thiếu nhi, học sinh hè năm 2026.",
+    image: "/images/tong-ket-hoat-dong-he-2026.jpg",
+    slug: "tong-ket-hoat-dong-quan-ly-giao-duc-thanh-thieu-nhi-he-2026",
   },
   {
     id: "news-cong-khai-thu-chi-quy-3-2026",
