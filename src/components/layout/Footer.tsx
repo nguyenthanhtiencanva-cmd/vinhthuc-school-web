@@ -198,7 +198,12 @@ export default function Footer() {
             {/* Fanpage Widget */}
             <div className="pt-2">
               <div className="rounded-2xl bg-slate-900 border border-slate-800 p-3 space-y-2.5">
-                <div className="flex items-center gap-2">
+                <a
+                  href="https://www.facebook.com/ththcsvinhthuc"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 group"
+                >
                   <div className="relative w-8 h-8 rounded-full overflow-hidden border border-white bg-white shrink-0">
                     <Image
                       src="/brand/logo.jpeg"
@@ -209,24 +214,33 @@ export default function Footer() {
                     />
                   </div>
                   <div className="min-w-0">
-                    <div className="text-[11px] font-bold text-white truncate">
+                    <div className="text-[11px] font-bold text-white group-hover:text-sky-400 transition-colors truncate">
                       TH &amp; THCS Vĩnh Thực
                     </div>
                     <div className="text-[10px] text-slate-400">2,2K người theo dõi</div>
                   </div>
-                </div>
+                </a>
 
                 <div className="flex gap-1.5 pt-0.5">
-                  <button className="flex-1 inline-flex items-center justify-center gap-1 py-1.5 rounded-lg bg-[#1877F2] text-[10px] font-semibold text-white hover:bg-blue-600 transition-colors">
+                  <a
+                    href="https://www.facebook.com/ththcsvinhthuc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-1.5 py-1.5 rounded-lg bg-[#1877F2] text-[10px] font-semibold text-white hover:bg-blue-600 transition-colors shadow-xs"
+                  >
                     <ThumbsUp className="w-3 h-3" />
                     <span>Theo dõi</span>
-                  </button>
-                  <button
-                    className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-[10px] font-semibold text-slate-200 hover:bg-slate-700 transition-colors"
+                  </a>
+                  <a
+                    href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fwww.facebook.com%2Fththcsvinhthuc"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-2.5 py-1.5 rounded-lg bg-slate-800 text-[10px] font-semibold text-slate-200 hover:bg-slate-700 transition-colors flex items-center justify-center"
                     aria-label="Chia sẻ fanpage"
+                    title="Chia sẻ fanpage"
                   >
                     <Share2 className="w-3 h-3" />
-                  </button>
+                  </a>
                 </div>
               </div>
             </div>
