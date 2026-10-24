@@ -136,7 +136,7 @@ export default function Header() {
           {/* Logo & School Name */}
           <Link
             href="/"
-            className="flex items-center gap-2.5 sm:gap-3.5 group min-w-0 max-w-[72vw] xs:max-w-[76vw] sm:max-w-none xl:w-[320px] 2xl:w-[360px] shrink-0"
+            className="flex items-center gap-2.5 sm:gap-3.5 group shrink-0"
           >
             <div className="relative w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl sm:rounded-2xl overflow-hidden border border-slate-200/80 bg-white p-1 shadow-xs group-hover:shadow-md group-hover:scale-105 transition-all shrink-0">
               <Image
@@ -149,14 +149,11 @@ export default function Header() {
               />
             </div>
             <div className="flex flex-col min-w-0">
-              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none truncate">
+              <span className="text-[9px] sm:text-[10px] md:text-[11px] font-semibold text-slate-500 uppercase tracking-wider leading-none">
                 UBND XÃ VĨNH THỰC
               </span>
-              <span className="text-sm sm:text-base xl:text-lg font-bold sm:font-extrabold tracking-tight text-slate-900 mt-0.5 sm:mt-1 leading-tight line-clamp-1 group-hover:text-sky-700 transition-colors">
+              <span className="text-xs xs:text-sm sm:text-base md:text-lg xl:text-lg 2xl:text-xl font-bold sm:font-extrabold tracking-tight text-slate-900 mt-0.5 sm:mt-1 leading-tight whitespace-nowrap group-hover:text-sky-700 transition-colors">
                 TRƯỜNG TH &amp; THCS VĨNH THỰC
-              </span>
-              <span className="text-[10px] sm:text-[11px] font-medium text-amber-600 italic leading-none mt-1 truncate hidden sm:block">
-                Soi đường tri thức – Vững bước tương lai
               </span>
             </div>
           </Link>
@@ -176,7 +173,7 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all ${
+                    className={`flex items-center gap-1.5 px-2.5 2xl:px-3.5 py-2 rounded-xl text-xs 2xl:text-sm font-semibold whitespace-nowrap transition-all ${
                       isHome
                         ? "text-sky-700 bg-sky-50/90 font-bold shadow-2xs"
                         : "text-slate-700 hover:text-sky-700 hover:bg-sky-50/80"
