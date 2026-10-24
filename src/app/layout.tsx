@@ -53,6 +53,15 @@ export const metadata: Metadata = {
       },
     ],
   },
+  verification: {
+    google: "google793a578b87f9f860",
+    other: {
+      "google-site-verification": [
+        "google793a578b87f9f860",
+        "google793a578b87f9f860.html",
+      ],
+    },
+  },
 };
 
 const jsonLd = {
