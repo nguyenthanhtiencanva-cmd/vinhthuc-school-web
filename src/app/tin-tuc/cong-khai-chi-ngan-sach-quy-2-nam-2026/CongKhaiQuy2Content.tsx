@@ -538,7 +538,7 @@ export default function CongKhaiQuy2Content() {
 
                 <div className="rounded-xl bg-white p-3.5 border border-amber-200/80 shadow-2xs">
                   <div className="text-xs font-bold text-slate-900">Cô Nguyễn Thị Huế</div>
-                  <div className="text-[11px] text-slate-500">Phó Bí thư Đảng ủy, Phó Hiệu trưởng (Điểm trường Vĩnh Trung 2)</div>
+                  <div className="text-[11px] text-slate-500">Phó Bí thư Đảng ủy, Phó Hiệu trưởng (Phân hiệu Vĩnh Trung)</div>
                   <div className="text-xs font-semibold text-sky-700 mt-1 flex items-center gap-1.5">
                     <Phone className="w-3.5 h-3.5 text-amber-600" />
                     <span>0903.280.488</span>

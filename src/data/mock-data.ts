@@ -171,7 +171,7 @@ export const SCHOOL_STATS: StatItem[] = [
   },
   {
     value: "01",
-    label: "Điểm trường 2: Thôn Vĩnh Trung",
+    label: "Phân hiệu Vĩnh Trung: Thôn Vĩnh Trung",
     iconName: "trophy",
   },
 ];

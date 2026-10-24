@@ -528,7 +528,7 @@ export default function CongKhaiQuy3Content() {
 
                 <div className="rounded-xl bg-white p-3.5 border border-amber-200/80 shadow-2xs">
                   <div className="text-xs font-bold text-slate-900">Thầy Đinh Công Thép</div>
-                  <div className="text-[11px] text-slate-500">Phó hiệu trưởng điểm trường 2 Thôn Vĩnh Trung</div>
+                  <div className="text-[11px] text-slate-500">Phó hiệu trưởng Phân hiệu Vĩnh Trung</div>
                   <div className="text-xs font-semibold text-sky-700 mt-1 flex items-center gap-1.5">
                     <Phone className="w-3.5 h-3.5 text-amber-600" />
                     <span>0374.127.332</span>

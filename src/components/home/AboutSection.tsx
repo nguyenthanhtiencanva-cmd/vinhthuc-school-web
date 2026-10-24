@@ -51,7 +51,7 @@ export default function AboutSection() {
                   Theo Quyết định số 220/QĐ-UBND ngày 15/10/2025 của UBND xã Vĩnh Thực, Trường Tiểu học Vĩnh Thực, Trường Trung học cơ sở Vĩnh Thực và Trường Tiểu học và Trung học cơ sở Vĩnh Trung được sáp nhập thành <strong className="text-white font-semibold">Trường Tiểu học và Trung học cơ sở Vĩnh Thực</strong>.
                 </p>
                 <p>
-                  Nhà trường là đơn vị sự nghiệp công lập trực thuộc UBND xã Vĩnh Thực. Điểm trường trung tâm đặt tại Thôn Đầu Đông; điểm trường 2 đặt tại Thôn Vĩnh Trung, xã Vĩnh Thực, TP. Quảng Ninh.
+                  Nhà trường là đơn vị sự nghiệp công lập trực thuộc UBND xã Vĩnh Thực. Điểm trường trung tâm đặt tại Thôn Đầu Đông; Phân hiệu Vĩnh Trung đặt tại Thôn Vĩnh Trung, xã Vĩnh Thực, TP. Quảng Ninh.
                 </p>
               </div>
             </div>
