@@ -44,18 +44,26 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-stem-khtn7-nha-cach-am",
-  title: "Sôi nổi tiết học STEM Khoa học tự nhiên 7: Chế tạo mô hình nhà cách âm",
-  category: "CHUYÊN MÔN & STEM",
-  date: "23/10/2026",
+  id: "news-tuyen-truyen-phap-luat-2026",
+  title: "Trường TH & THCS Vĩnh Thực phối hợp tuyên truyền, phổ biến pháp luật cho học sinh nơi xã đảo",
+  category: "AN TOÀN HỌC ĐƯỜNG & PHÁP LUẬT",
+  date: "06/11/2026",
   summary:
-    "Học sinh khối 7 Trường TH&THCS Vĩnh Thực biến kiến thức sóng âm và phản xạ âm thanh thành những mô hình nhà cách âm độc đáo, sáng tạo từ vật liệu tái chế.",
-  image: "/images/stem-khtn7-nha-cach-am-1.jpg",
-  slug: "tiet-hoc-stem-khoa-hoc-tu-nhien-7-mo-hinh-nha-cach-am",
+    "Hưởng ứng Ngày Pháp luật Việt Nam 9/11, nhà trường phối hợp cùng Đồn Biên phòng CKC Vạn Gia và Công an xã Vĩnh Thực tổ chức sinh hoạt chuyên đề phòng chống ma túy và mua bán người cho toàn thể học sinh.",
+  image: "/images/tuyen-truyen-phap-luat-2026/trao-qua-luu-niem-bien-phong-cong-an-truong.jpg",
+  slug: "tuyen-truyen-pho-bien-phap-luat-hoc-sinh-xa-dao-vinh-thuc",
   featured: true,
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-tuyen-truyen-phap-luat-2026",
+    title: "Trường TH & THCS Vĩnh Thực phối hợp tuyên truyền, phổ biến pháp luật cho học sinh nơi xã đảo",
+    category: "AN TOÀN HỌC ĐƯỜNG & PHÁP LUẬT",
+    date: "06/11/2026",
+    image: "/images/tuyen-truyen-phap-luat-2026/trao-qua-luu-niem-bien-phong-cong-an-truong.jpg",
+    slug: "tuyen-truyen-pho-bien-phap-luat-hoc-sinh-xa-dao-vinh-thuc",
+  },
   {
     id: "news-stem-khtn7-nha-cach-am",
     title: "Sôi nổi tiết học STEM Khoa học tự nhiên 7: Chế tạo mô hình nhà cách âm",
