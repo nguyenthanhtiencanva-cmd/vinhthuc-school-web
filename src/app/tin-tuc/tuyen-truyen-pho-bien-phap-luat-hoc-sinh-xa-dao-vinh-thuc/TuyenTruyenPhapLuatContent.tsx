@@ -47,10 +47,10 @@ const GALLERY_IMAGES: GalleryImage[] = [
       "Thầy Hiệu trưởng Khổng Duy Phong ân cần phát cẩm nang pháp luật và trực tiếp hướng dẫn, nhắc nhở các em học sinh.",
   },
   {
-    src: "/images/tuyen-truyen-phap-luat-2026/cong-an-xa-vinh-thuc-tuyen-truyen.jpg",
-    alt: "Cán bộ Công an xã Vĩnh Thực phát tờ rơi và cảnh báo thủ đoạn tội phạm",
+    src: "/images/tuyen-truyen-phap-luat-2026/ban-giam-hieu-phat-to-roi-hoc-sinh.jpg",
+    alt: "Ban Giám hiệu nhà trường phát cẩm nang pháp luật cho học sinh",
     caption:
-      "Cán bộ Công an xã Vĩnh Thực phát tờ rơi và cảnh báo các thủ đoạn lừa đảo, lôi kéo qua không gian mạng tới học sinh.",
+      "Ban Giám hiệu và các thầy cô giáo nhà trường trực tiếp phát cẩm nang, nhắc nhở học sinh nâng cao ý thức chấp hành pháp luật.",
   },
   {
     src: "/images/tuyen-truyen-phap-luat-2026/hoc-sinh-huong-ung-phong-chong-ma-tuy.jpg",
