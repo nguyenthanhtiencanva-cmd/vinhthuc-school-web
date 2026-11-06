@@ -41,10 +41,10 @@ const GALLERY_IMAGES: GalleryImage[] = [
       "Toàn cảnh buổi sinh hoạt chuyên đề tuyên truyền pháp luật về phòng, chống ma túy và mua bán người tại hội trường.",
   },
   {
-    src: "/images/tuyen-truyen-phap-luat-2026/hieu-truong-khong-duy-phong-phat-to-roi.jpg",
-    alt: "Thầy Hiệu trưởng Khổng Duy Phong ân cần phát cẩm nang pháp luật cho học sinh",
+    src: "/images/tuyen-truyen-phap-luat-2026/pho-hieu-truong-dinh-cong-thep-phat-to-roi.jpg",
+    alt: "Thầy Phó Hiệu trưởng Đinh Công Thép ân cần phát cẩm nang pháp luật cho học sinh",
     caption:
-      "Thầy Hiệu trưởng Khổng Duy Phong ân cần phát cẩm nang pháp luật và trực tiếp hướng dẫn, nhắc nhở các em học sinh.",
+      "Thầy Phó Hiệu trưởng Đinh Công Thép ân cần phát cẩm nang pháp luật và trực tiếp hướng dẫn, nhắc nhở các em học sinh.",
   },
   {
     src: "/images/tuyen-truyen-phap-luat-2026/ban-giam-hieu-phat-to-roi-hoc-sinh.jpg",
@@ -195,7 +195,7 @@ export default function TuyenTruyenPhapLuatContent() {
             </figure>
 
             <p>
-              Tham dự buổi tuyên truyền có đại diện chỉ huy, cán bộ, chiến sĩ <strong>Đồn Biên phòng cửa khẩu cảng Vạn Gia</strong> (Bộ đội Biên phòng tỉnh Quảng Ninh); lãnh đạo <strong>Công an xã Vĩnh Thực</strong>; cùng thầy <strong>Khổng Duy Phong</strong> – Bí thư Chi bộ, Hiệu trưởng nhà trường, Ban Giám hiệu, tập thể thầy cô giáo và đông đảo các em học sinh Trường TH &amp; THCS Vĩnh Thực.
+              Tham dự buổi tuyên truyền có đại diện chỉ huy, cán bộ, chiến sĩ <strong>Đồn Biên phòng cửa khẩu cảng Vạn Gia</strong> (Bộ đội Biên phòng tỉnh Quảng Ninh); lãnh đạo <strong>Công an xã Vĩnh Thực</strong>; cùng thầy <strong>Đinh Công Thép</strong> – Phó Hiệu trưởng nhà trường, Ban Giám hiệu, tập thể thầy cô giáo và đông đảo các em học sinh Trường TH &amp; THCS Vĩnh Thực.
             </p>
 
             {/* Image 2: Toàn cảnh */}
