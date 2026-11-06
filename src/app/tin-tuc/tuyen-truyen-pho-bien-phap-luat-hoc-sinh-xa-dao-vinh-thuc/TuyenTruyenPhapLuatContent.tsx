@@ -195,7 +195,7 @@ export default function TuyenTruyenPhapLuatContent() {
             </figure>
 
             <p>
-              Tham dự buổi tuyên truyền có đại diện chỉ huy, cán bộ, chiến sĩ <strong>Đồn Biên phòng cửa khẩu cảng Vạn Gia</strong> (Bộ đội Biên phòng tỉnh Quảng Ninh); lãnh đạo <strong>Công an xã Vĩnh Thực</strong>; cùng thầy <strong>Đinh Công Thép</strong> – Phó Hiệu trưởng nhà trường, Ban Giám hiệu, tập thể thầy cô giáo và đông đảo các em học sinh Trường TH &amp; THCS Vĩnh Thực.
+              Tham dự buổi tuyên truyền có đại diện chỉ huy, cán bộ, chiến sĩ <strong>Đồn Biên phòng cửa khẩu cảng Vạn Gia</strong> (Bộ đội Biên phòng tỉnh Quảng Ninh); lãnh đạo <strong>Công an xã Vĩnh Thực</strong>; cùng thầy <strong>Khổng Duy Phong</strong> – Bí thư Chi bộ, Hiệu trưởng nhà trường, Ban Giám hiệu, tập thể thầy cô giáo và đông đảo các em học sinh Trường TH &amp; THCS Vĩnh Thực.
             </p>
 
             {/* Image 2: Toàn cảnh */}
