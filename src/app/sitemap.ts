@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/tin-tuc/doi-bong-da-nu-truong-th-thcs-vinh-thuc-gianh-chuc-vo-dich-2026`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/tin-tuc/tuyen-truyen-pho-bien-phap-luat-hoc-sinh-xa-dao-vinh-thuc`,
       lastModified: now,
       changeFrequency: "weekly",

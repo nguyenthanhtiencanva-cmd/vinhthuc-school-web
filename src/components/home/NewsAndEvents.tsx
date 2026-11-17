@@ -178,6 +178,7 @@ export default function NewsAndEvents() {
             {RECENT_NEWS.filter((item) => item.id !== FEATURED_NEWS.id).slice(0, 5).map((item) => {
               const isSvg = item.image.endsWith(".svg");
               const hasDetailPage =
+                item.slug.startsWith("doi-bong") ||
                 item.slug.startsWith("tiet-hoc") ||
                 item.slug.startsWith("tong-ket") ||
                 item.slug.startsWith("tuyen-truyen") ||

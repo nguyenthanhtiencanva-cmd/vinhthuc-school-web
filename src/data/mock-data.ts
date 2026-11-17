@@ -44,18 +44,26 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-tuyen-truyen-phap-luat-2026",
-  title: "Trường TH & THCS Vĩnh Thực phối hợp tuyên truyền, phổ biến pháp luật cho học sinh nơi xã đảo",
-  category: "AN TOÀN HỌC ĐƯỜNG & PHÁP LUẬT",
-  date: "06/11/2026",
+  id: "news-vo-dich-bong-da-nu-2026",
+  title: "Đội bóng đá nữ Trường TH & THCS Vĩnh Thực xuất sắc giành chức Vô địch Giải Bóng đá nữ năm 2026",
+  category: "VĂN HÓA – THỂ THAO 20/11",
+  date: "17/11/2026",
   summary:
-    "Hưởng ứng Ngày Pháp luật Việt Nam 9/11, nhà trường phối hợp cùng Đồn Biên phòng CKC Vạn Gia và Công an xã Vĩnh Thực tổ chức sinh hoạt chuyên đề phòng chống ma túy và mua bán người cho toàn thể học sinh.",
-  image: "/images/tuyen-truyen-phap-luat-2026/trao-qua-luu-niem-bien-phong-cong-an-truong.jpg",
-  slug: "tuyen-truyen-pho-bien-phap-luat-hoc-sinh-xa-dao-vinh-thuc",
+    "Chào mừng Ngày Văn hóa Việt Nam, Ngày hội Đại đoàn kết toàn dân tộc và Ngày Nhà giáo Việt Nam 20/11, đội bóng đá nữ cán bộ, giáo viên nhà trường thi đấu bùng nổ và xuất sắc lên ngôi Vô địch.",
+  image: "/images/giai-bong-da-nu-2026/trao-co-luu-niem-va-hoa-chuc-mung.jpg",
+  slug: "doi-bong-da-nu-truong-th-thcs-vinh-thuc-gianh-chuc-vo-dich-2026",
   featured: true,
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-vo-dich-bong-da-nu-2026",
+    title: "Đội bóng đá nữ Trường TH & THCS Vĩnh Thực xuất sắc giành chức Vô địch Giải Bóng đá nữ năm 2026",
+    category: "VĂN HÓA – THỂ THAO 20/11",
+    date: "17/11/2026",
+    image: "/images/giai-bong-da-nu-2026/trao-co-luu-niem-va-hoa-chuc-mung.jpg",
+    slug: "doi-bong-da-nu-truong-th-thcs-vinh-thuc-gianh-chuc-vo-dich-2026",
+  },
   {
     id: "news-tuyen-truyen-phap-luat-2026",
     title: "Trường TH & THCS Vĩnh Thực phối hợp tuyên truyền, phổ biến pháp luật cho học sinh nơi xã đảo",
