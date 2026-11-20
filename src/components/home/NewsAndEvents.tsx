@@ -126,20 +126,25 @@ export default function NewsAndEvents() {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
           {/* Big Featured Article (7 cols) */}
           <div className="lg:col-span-7 flex flex-col group bg-white rounded-2xl border border-slate-200/80 overflow-hidden shadow-xs hover:shadow-xl lg:hover:-translate-y-1.5 transition-all duration-300">
-            <div className="relative aspect-[16/10] w-full overflow-hidden bg-slate-100">
+            <Link
+              href={`/tin-tuc/${FEATURED_NEWS.slug}`}
+              className={`block relative ${
+                FEATURED_NEWS.slug.startsWith("thu-cam-on") ? "aspect-[3/2]" : "aspect-[16/10]"
+              } w-full overflow-hidden bg-slate-100`}
+            >
               <Image
                 src={FEATURED_NEWS.image}
                 alt={FEATURED_NEWS.title}
                 fill
                 sizes="(max-width: 1024px) 100vw, 800px"
-                className="object-cover object-[center_20%] group-hover:scale-105 transition-transform duration-500"
+                className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
               />
               <div className="absolute top-3 left-3 flex items-center gap-2">
                 <span className="bg-sky-700/90 backdrop-blur-md text-white text-[11px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
                   {FEATURED_NEWS.category}
                 </span>
               </div>
-            </div>
+            </Link>
 
             <div className="p-5 sm:p-6 lg:p-7 flex-1 flex flex-col justify-between">
               <div className="space-y-2.5">
@@ -178,6 +183,7 @@ export default function NewsAndEvents() {
             {RECENT_NEWS.filter((item) => item.id !== FEATURED_NEWS.id).slice(0, 5).map((item) => {
               const isSvg = item.image.endsWith(".svg");
               const hasDetailPage =
+                item.slug.startsWith("thu-cam-on") ||
                 item.slug.startsWith("doi-bong") ||
                 item.slug.startsWith("tiet-hoc") ||
                 item.slug.startsWith("tong-ket") ||

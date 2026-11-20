@@ -44,18 +44,28 @@ export const QUICK_CARDS: QuickCardItem[] = [
 ];
 
 export const FEATURED_NEWS: NewsItem = {
-  id: "news-vo-dich-bong-da-nu-2026",
-  title: "Đội bóng đá nữ Trường TH & THCS Vĩnh Thực xuất sắc giành chức Vô địch Giải Bóng đá nữ năm 2026",
-  category: "VĂN HÓA – THỂ THAO 20/11",
-  date: "17/11/2026",
+  id: "news-thu-cam-on-agribank-2026",
+  title:
+    "Thư cảm ơn Ngân hàng Agribank – Chi nhánh Đông Quảng Ninh trao tặng 02 chiếc Tivi 75 inch cho Trường TH & THCS Vĩnh Thực nhân dịp 20/11",
+  category: "TRI ÂN & ĐỒNG HÀNH 20/11",
+  date: "20/11/2026",
   summary:
-    "Chào mừng Ngày Văn hóa Việt Nam, Ngày hội Đại đoàn kết toàn dân tộc và Ngày Nhà giáo Việt Nam 20/11, đội bóng đá nữ cán bộ, giáo viên nhà trường thi đấu bùng nổ và xuất sắc lên ngôi Vô địch.",
-  image: "/images/giai-bong-da-nu-2026/trao-co-luu-niem-va-hoa-chuc-mung.jpg",
-  slug: "doi-bong-da-nu-truong-th-thcs-vinh-thuc-gianh-chuc-vo-dich-2026",
+    "Nhân dịp kỷ niệm Ngày Nhà giáo Việt Nam 20/11, Trường TH & THCS Vĩnh Thực trân trọng gửi Thư cảm ơn số 48/TH&THCS tới Ngân hàng Agribank – Chi nhánh Đông Quảng Ninh đã quan tâm, sẻ chia và trao tặng 02 chiếc Tivi 75 inch phục vụ công tác dạy và học nơi xã đảo.",
+  image: "/images/thu-cam-on-agribank-2026/thu-cam-on-agribank-dong-quang-ninh-banner.jpg",
+  slug: "thu-cam-on-ngan-hang-agribank-dong-quang-ninh-tang-02-tivi-75-inch-2026",
   featured: true,
 };
 
 export const RECENT_NEWS: NewsItem[] = [
+  {
+    id: "news-thu-cam-on-agribank-2026",
+    title:
+      "Thư cảm ơn Ngân hàng Agribank – Chi nhánh Đông Quảng Ninh trao tặng 02 chiếc Tivi 75 inch cho Trường TH & THCS Vĩnh Thực nhân dịp 20/11",
+    category: "TRI ÂN & ĐỒNG HÀNH 20/11",
+    date: "20/11/2026",
+    image: "/images/thu-cam-on-agribank-2026/thu-cam-on-agribank-dong-quang-ninh-banner.jpg",
+    slug: "thu-cam-on-ngan-hang-agribank-dong-quang-ninh-tang-02-tivi-75-inch-2026",
+  },
   {
     id: "news-vo-dich-bong-da-nu-2026",
     title: "Đội bóng đá nữ Trường TH & THCS Vĩnh Thực xuất sắc giành chức Vô địch Giải Bóng đá nữ năm 2026",

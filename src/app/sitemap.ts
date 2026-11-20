@@ -12,6 +12,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/tin-tuc/thu-cam-on-ngan-hang-agribank-dong-quang-ninh-tang-02-tivi-75-inch-2026`,
+      lastModified: now,
+      changeFrequency: "weekly",
+      priority: 0.95,
+    },
+    {
       url: `${baseUrl}/tin-tuc/doi-bong-da-nu-truong-th-thcs-vinh-thuc-gianh-chuc-vo-dich-2026`,
       lastModified: now,
       changeFrequency: "weekly",
